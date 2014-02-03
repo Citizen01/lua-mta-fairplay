@@ -31,4 +31,4 @@ Spring, summer, fall, winter. All within the server and fully functional. Making
 
 ### On a special note
 Shaders by `Ren712` (http://community.mtasa.com/) and MTA:SA Wiki examples (http://wiki.mtasa.com/).
-Very tiny snippets from the community and other resources, if those are left out, the main credit is mine, I guess.
+Very tiny snippets from the community and other resources, if those are left out, the main credit is mine, I guess (in addition, keep the copyrights up there, I made this open-source for a reason ok).
