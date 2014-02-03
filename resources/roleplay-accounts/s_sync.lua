@@ -24,7 +24,7 @@ function returnedValue(val)
 end
 
 local function sendPlayerAmount()
-	callRemote("http://socialz.comuv.com/api_setcount.php", returnedValue, playerAmount .. "/" .. getMaxPlayers())
+	callRemote("your_player_count_api_file.php", returnedValue, playerAmount .. "/" .. getMaxPlayers())
 end
 
 local function updatePlayerAmount()
