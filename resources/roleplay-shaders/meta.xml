@@ -1,14 +1,33 @@
+<!--
+	- FairPlay Gaming: Roleplay
+	
+	This program is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation; either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <http://www.gnu.org/licenses/>.
+	
+	(c) Copyright 2014 FairPlay Gaming. All rights reserved.
+-->
+
 <meta>
 	<!-- Configuration -->
 	<info author="FairPlay Gaming" name="roleplay-shaders" description="Shader management resource." type="script" />
 	<min_mta_version server="1.3.4-0.00000" client="1.3.4-0.00000" />
 	
 	<!-- General -->
-	<file src="_global/c_debugresults.luac" type="client" />
+	<file src="_global/c_debugresults.lua" type="client" />
 	
 	<!-- Bloom (1) -->
-	<script src="bloom_1/c_bloom.luac" type="client" cache="false" />
-	<script src="bloom_1/c_bloomPool.luac" type="client" cache="false" />
+	<script src="bloom_1/c_bloom.lua" type="client" cache="false" />
+	<script src="bloom_1/c_bloomPool.lua" type="client" cache="false" />
 	<file src="bloom_1/shaders/addBlend.fx" type="client" />
 	<file src="bloom_1/shaders/blurH.fx" type="client" />
 	<file src="bloom_1/shaders/blurV.fx" type="client" />
@@ -16,15 +35,15 @@
 	<file src="bloom_1/shaders/mta-helper.fx" type="client" />
 	
 	<!-- Car Reflect (2) -->
-	<script src="carreflect_2/c_reflect.luac" type="client" cache="false" />
+	<script src="carreflect_2/c_reflect.lua" type="client" cache="false" />
 	<file src="carreflect_2/shaders/car_paint.fx" type="client" />
 	<file src="carreflect_2/shaders/mta-helper.fx" type="client" />
 	<file src="carreflect_2/images/cube_env256.dds" type="client" />
 	<file src="carreflect_2/images/smallnoise3d.dds" type="client" />
 	
 	<!-- Contrast (3) -->
-	<script src="contrast_3/c_contrast.luac" type="client" cache="false" />
-	<script src="contrast_3/c_contrastPool.luac" type="client" cache="false" />
+	<script src="contrast_3/c_contrast.lua" type="client" cache="false" />
+	<script src="contrast_3/c_contrastPool.lua" type="client" cache="false" />
 	<file src="contrast_3/shaders/bloom_combine.fx" type="client" />
 	<file src="contrast_3/shaders/bloom_extract.fx" type="client" />
 	<file src="contrast_3/shaders/blurH.fx" type="client" />
@@ -35,7 +54,7 @@
 	<file src="contrast_3/images/vignette1.dds" type="client" />
 	
 	<!-- Detail (4) -->
-	<script src="detail_4/c_detail.luac" type="client" cache="false" />
+	<script src="detail_4/c_detail.lua" type="client" cache="false" />
 	<file src="detail_4/shaders/detail.fx" type="client" />
 	<file src="detail_4/shaders/mta-helper.fx" type="client" />
 	<file src="detail_4/images/dirty.png" type="client" />
@@ -51,29 +70,29 @@
 	<!-- DoFBokeh (5) was moved to a separate resource -->
 	
 	<!-- FXAA (6) -->
-	<script src="fxaa_6/c_fxaa.luac" type="client" cache="false" />
-	<script src="fxaa_6/c_fxaaPool.luac" type="client" cache="false" />
+	<script src="fxaa_6/c_fxaa.lua" type="client" cache="false" />
+	<script src="fxaa_6/c_fxaaPool.lua" type="client" cache="false" />
 	<file src="fxaa_6/shaders/FXAA.fx" type="client" />
 	<file src="fxaa_6/shaders/mta-helper.fx" type="client" />
 	
 	<!-- Reflected Water (7) -->
-	<script src="reflectedwater_7/c_water.luac" type="client" cache="false" />
-	<script src="reflectedwater_7/c_sunInfluence.luac" type="client" cache="false" />
+	<script src="reflectedwater_7/c_water.lua" type="client" cache="false" />
+	<script src="reflectedwater_7/c_sunInfluence.lua" type="client" cache="false" />
 	<file src="reflectedwater_7/shaders/water.fx" type="client" />
 	<file src="reflectedwater_7/shaders/mta-helper.fx" type="client" />
 	<file src="reflectedwater_7/images/wavemap.png" type="client" />
 	<file src="reflectedwater_7/images/cube_env256.dds" type="client" />
 	
 	<!-- Reflection (8) -->
-	<script src="reflection_8/c_reflection.luac" type="client" cache="false" />
-	<script src="reflection_8/c_reflectPool.luac" type="client" cache="false" />
+	<script src="reflection_8/c_reflection.lua" type="client" cache="false" />
+	<script src="reflection_8/c_reflectPool.lua" type="client" cache="false" />
 	<file src="reflection_8/shaders/blurH.fx" type="client" />
 	<file src="reflection_8/shaders/blurV.fx" type="client" />
 	<file src="reflection_8/shaders/mta-helper.fx" type="client" />
 	<file src="reflection_8/shaders/shader_bump.fx" type="client" />
 	
 	<!-- Skybox (12) -->
-	<script src="skybox_12/c_skybox.luac" type="client" cache="false" />
+	<script src="skybox_12/c_skybox.lua" type="client" cache="false" />
 	<file src="skybox_12/shaders/shader_skydome.fx" type="client" />
 	<file src="skybox_12/shaders/shader_null.fx" type="client" />
 	<file src="skybox_12/shaders/mta-helper.fx" type="client" />
