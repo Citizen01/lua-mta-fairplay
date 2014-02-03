@@ -1,0 +1,52 @@
+<!--
+	- FairPlay Gaming: Roleplay
+	
+	This program is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation; either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <http://www.gnu.org/licenses/>.
+	
+	(c) Copyright 2014 FairPlay Gaming. All rights reserved.
+-->
+
+<meta>
+	<!-- Configuration -->
+	<info author="FairPlay Gaming" name="roleplay-chat" description="Chat management resource." type="script" />
+	<min_mta_version server="1.3.4-0.00000" client="1.3.4-0.00000" />
+	
+	<!-- Main -->
+	<script src="c_languages.lua" type="client" cache="false" />
+	<script src="c_chat.lua" type="client" cache="false" />
+	<script src="s_chat.lua" type="server" />
+	
+	<!-- Exports -->
+	<export function="outputLocalChat" type="server" />
+	<export function="outputLocalOOCChat" type="server" />
+	<export function="outputLocalWhisper" type="server" />
+	<export function="outputPlayerWhisper" type="server" />
+	<export function="outputLocalShout" type="server" />
+	<export function="outputLocalActionMe" type="server" />
+	<export function="outputLocalActionDo" type="server" />
+	
+	<script src="exports/shared_exports.lua" type="shared" cache="false" />
+	<export function="getLanguages" type="shared" />
+	<export function="getLanguage" type="shared" />
+	<export function="getLanguageFlag" type="shared" />
+	<export function="getLanguageName" type="shared" />
+	<export function="hasLanguage" type="shared" />
+	<export function="getFreeSlot" type="shared" />
+	<export function="giveLanguage" type="shared" />
+	<export function="takeLanguage" type="shared" />
+	<export function="increaseLanguageSkill" type="shared" />
+	<export function="getPlayerLanguage" type="shared" />
+	<export function="getPlayerLanguages" type="shared" />
+	<export function="getPlayerLanguageSkill" type="shared" />
+</meta>

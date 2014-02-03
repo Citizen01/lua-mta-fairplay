@@ -1,0 +1,416 @@
+<!--
+	- FairPlay Gaming: Roleplay
+	
+	This program is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation; either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <http://www.gnu.org/licenses/>.
+	
+	(c) Copyright 2014 FairPlay Gaming. All rights reserved.
+-->
+
+<meta>
+	<!-- Configuration -->
+	<info author="FairPlay Gaming" name="roleplay-accounts" description="Account management resource." type="script" />
+	<min_mta_version server="1.3.4-0.00000" client="1.3.4-0.00000" />
+	
+	<include resource="roleplay-scoreboard" />
+	
+	<!-- Main -->
+	<script src="c_view.lua" type="client" cache="false" />
+	<script src="c_tutorial.lua" type="client" cache="false" />
+	<script src="c_notifications.lua" type="client" cache="false" />
+	<script src="c_accounts.lua" type="client" cache="false" />
+	<script src="s_accounts.lua" type="server" />
+	<script src="s_death.lua" type="server" />
+	<script src="c_game.lua" type="client" cache="false" />
+	<script src="s_game.lua" type="server" />
+	<script src="s_id.lua" type="server" />
+	<script src="s_stats.lua" type="server" />
+	<script src="s_webserver.lua" type="server" />
+	
+	<script src="s_ck.lua" type="server" />
+	<export function="findCharacterKill" type="server" />
+	<export function="deleteCharacterKill" type="server" />
+	<export function="createCharacterKill" type="server" />
+	
+	<script src="s_sync.lua" type="server" />
+	<export function="returnedValue" http="true" />
+	
+	<!-- Utilities -->
+	<script src="utilities/base64.lua" type="shared" cache="false" />
+	<script src="utilities/check.lua" type="shared" cache="false" />
+	<script src="utilities/table.lua" type="shared" cache="false" />
+	
+	<!-- Exports -->
+	<script src="exports/shared_exports.lua" type="shared" cache="false" />
+	<export function="outputAdminLog" type="shared" />
+	<export function="getPlayerFromPartialName" type="shared" />
+	<export function="getPlayerByID" type="shared" />
+	<export function="getRealPlayerName" type="shared" />
+	<export function="getRealPlayerName2" type="shared" />
+	<export function="getReturnData" type="shared" />
+	<export function="isClientLoggedIn" type="shared" />
+	<export function="isClientPlaying" type="shared" />
+	<export function="isClientInTutorial" type="shared" />
+	<export function="isOOCMuted" type="shared" />
+	<export function="isClientModerator" type="shared" />
+	<export function="isClientTrialAdmin" type="shared" />
+	<export function="isClientAdmin" type="shared" />
+	<export function="isClientSenior" type="shared" />
+	<export function="isClientSeniorAdmin" type="shared" />
+	<export function="isClientLeadAdmin" type="shared" />
+	<export function="isClientHeadAdmin" type="shared" />
+	<export function="isClientLeader" type="shared" />
+	<export function="isClientOwner" type="shared" />
+	<export function="isClientHidden" type="shared" />
+	<export function="getAccountSetting" type="shared" />
+	<export function="getPlayerLanguage" type="shared" />
+	<export function="getPlayerLanguages" type="shared" />
+	<export function="getPlayerFaction" type="shared" />
+	<export function="getFactionPrivileges" type="shared" />
+	<export function="getFactionRank" type="shared" />
+	<export function="getAccountName" type="shared" />
+	<export function="getAccountID" type="shared" />
+	<export function="getCharacterID" type="shared" />
+	<export function="getCharacterGender" type="shared" />
+	<export function="getCharacterRealGender" type="shared" />
+	<export function="getCharacterJob" type="shared" />
+	<export function="hasDriversLicense" type="shared" />
+	<export function="hasTruckLicense" type="shared" />
+	<export function="hasManualTransmission" type="shared" />
+	<export function="hasAutomaticTransmission" type="shared" />
+	<export function="getClientID" type="shared" />
+	<export function="getAdminLevel" type="shared" />
+	<export function="getAdminRank" type="shared" />
+	<export function="getAdminState" type="shared" />
+	<export function="getFormattedDate" type="shared" />
+	<export function="getServerIP" type="shared" />
+	<export function="getScriptVersion" type="shared" />
+	<export function="Check" type="shared" />
+	<export function="condense" type="shared" />
+	
+	<script src="exports/client_exports.lua" type="client" cache="false" />
+	<export function="setCursorToggled" type="client" />
+	<export function="stopSmoothMoveCamera" type="client" />
+	<export function="smoothMoveCamera" type="client" />
+	
+	<script src="exports/server_exports.lua" type="server" />
+	<export function="saveCharacter" type="server" />
+	<export function="getSQLConnection" type="server" />
+	<export function="getClientRealID" type="server" />
+	<export function="getCharacterTime" type="server" />
+	<export function="getCharacterHour" type="server" />
+	
+	<!-- Files -->
+	<file src="images/logo.png" />
+	<file src="images/rounded.png" />
+	<file src="images/models/0.png" />
+	<file src="images/models/1.png" />
+	<file src="images/models/2.png" />
+	<file src="images/models/7.png" />
+	<file src="images/models/9.png" />
+	<file src="images/models/10.png" />
+	<file src="images/models/11.png" />
+	<file src="images/models/12.png" />
+	<file src="images/models/13.png" />
+	<file src="images/models/14.png" />
+	<file src="images/models/15.png" />
+	<file src="images/models/16.png" />
+	<file src="images/models/17.png" />
+	<file src="images/models/18.png" />
+	<file src="images/models/19.png" />
+	<file src="images/models/20.png" />
+	<file src="images/models/21.png" />
+	<file src="images/models/22.png" />
+	<file src="images/models/23.png" />
+	<file src="images/models/24.png" />
+	<file src="images/models/25.png" />
+	<file src="images/models/26.png" />
+	<file src="images/models/27.png" />
+	<file src="images/models/28.png" />
+	<file src="images/models/29.png" />
+	<file src="images/models/30.png" />
+	<file src="images/models/31.png" />
+	<file src="images/models/32.png" />
+	<file src="images/models/33.png" />
+	<file src="images/models/34.png" />
+	<file src="images/models/35.png" />
+	<file src="images/models/36.png" />
+	<file src="images/models/37.png" />
+	<file src="images/models/38.png" />
+	<file src="images/models/39.png" />
+	<file src="images/models/40.png" />
+	<file src="images/models/41.png" />
+	<file src="images/models/43.png" />
+	<file src="images/models/44.png" />
+	<file src="images/models/45.png" />
+	<file src="images/models/46.png" />
+	<file src="images/models/47.png" />
+	<file src="images/models/48.png" />
+	<file src="images/models/49.png" />
+	<file src="images/models/50.png" />
+	<file src="images/models/51.png" />
+	<file src="images/models/52.png" />
+	<file src="images/models/53.png" />
+	<file src="images/models/54.png" />
+	<file src="images/models/55.png" />
+	<file src="images/models/56.png" />
+	<file src="images/models/57.png" />
+	<file src="images/models/58.png" />
+	<file src="images/models/59.png" />
+	<file src="images/models/60.png" />
+	<file src="images/models/61.png" />
+	<file src="images/models/62.png" />
+	<file src="images/models/63.png" />
+	<file src="images/models/64.png" />
+	<file src="images/models/66.png" />
+	<file src="images/models/67.png" />
+	<file src="images/models/68.png" />
+	<file src="images/models/69.png" />
+	<file src="images/models/70.png" />
+	<file src="images/models/71.png" />
+	<file src="images/models/72.png" />
+	<file src="images/models/73.png" />
+	<file src="images/models/75.png" />
+	<file src="images/models/76.png" />
+	<file src="images/models/77.png" />
+	<file src="images/models/78.png" />
+	<file src="images/models/79.png" />
+	<file src="images/models/80.png" />
+	<file src="images/models/81.png" />
+	<file src="images/models/82.png" />
+	<file src="images/models/83.png" />
+	<file src="images/models/84.png" />
+	<file src="images/models/85.png" />
+	<file src="images/models/87.png" />
+	<file src="images/models/88.png" />
+	<file src="images/models/89.png" />
+	<file src="images/models/90.png" />
+	<file src="images/models/91.png" />
+	<file src="images/models/92.png" />
+	<file src="images/models/93.png" />
+	<file src="images/models/94.png" />
+	<file src="images/models/95.png" />
+	<file src="images/models/96.png" />
+	<file src="images/models/97.png" />
+	<file src="images/models/98.png" />
+	<file src="images/models/99.png" />
+	<file src="images/models/100.png" />
+	<file src="images/models/101.png" />
+	<file src="images/models/102.png" />
+	<file src="images/models/103.png" />
+	<file src="images/models/104.png" />
+	<file src="images/models/105.png" />
+	<file src="images/models/106.png" />
+	<file src="images/models/107.png" />
+	<file src="images/models/108.png" />
+	<file src="images/models/109.png" />
+	<file src="images/models/110.png" />
+	<file src="images/models/111.png" />
+	<file src="images/models/112.png" />
+	<file src="images/models/113.png" />
+	<file src="images/models/114.png" />
+	<file src="images/models/115.png" />
+	<file src="images/models/116.png" />
+	<file src="images/models/117.png" />
+	<file src="images/models/118.png" />
+	<file src="images/models/120.png" />
+	<file src="images/models/121.png" />
+	<file src="images/models/122.png" />
+	<file src="images/models/123.png" />
+	<file src="images/models/124.png" />
+	<file src="images/models/125.png" />
+	<file src="images/models/126.png" />
+	<file src="images/models/127.png" />
+	<file src="images/models/128.png" />
+	<file src="images/models/129.png" />
+	<file src="images/models/130.png" />
+	<file src="images/models/131.png" />
+	<file src="images/models/132.png" />
+	<file src="images/models/133.png" />
+	<file src="images/models/134.png" />
+	<file src="images/models/135.png" />
+	<file src="images/models/136.png" />
+	<file src="images/models/137.png" />
+	<file src="images/models/138.png" />
+	<file src="images/models/139.png" />
+	<file src="images/models/140.png" />
+	<file src="images/models/141.png" />
+	<file src="images/models/142.png" />
+	<file src="images/models/143.png" />
+	<file src="images/models/144.png" />
+	<file src="images/models/145.png" />
+	<file src="images/models/146.png" />
+	<file src="images/models/147.png" />
+	<file src="images/models/148.png" />
+	<file src="images/models/100.png" />
+	<file src="images/models/150.png" />
+	<file src="images/models/151.png" />
+	<file src="images/models/152.png" />
+	<file src="images/models/153.png" />
+	<file src="images/models/154.png" />
+	<file src="images/models/155.png" />
+	<file src="images/models/156.png" />
+	<file src="images/models/157.png" />
+	<file src="images/models/158.png" />
+	<file src="images/models/159.png" />
+	<file src="images/models/160.png" />
+	<file src="images/models/161.png" />
+	<file src="images/models/162.png" />
+	<file src="images/models/163.png" />
+	<file src="images/models/164.png" />
+	<file src="images/models/165.png" />
+	<file src="images/models/166.png" />
+	<file src="images/models/167.png" />
+	<file src="images/models/168.png" />
+	<file src="images/models/169.png" />
+	<file src="images/models/170.png" />
+	<file src="images/models/171.png" />
+	<file src="images/models/172.png" />
+	<file src="images/models/173.png" />
+	<file src="images/models/174.png" />
+	<file src="images/models/175.png" />
+	<file src="images/models/176.png" />
+	<file src="images/models/177.png" />
+	<file src="images/models/178.png" />
+	<file src="images/models/179.png" />
+	<file src="images/models/180.png" />
+	<file src="images/models/181.png" />
+	<file src="images/models/182.png" />
+	<file src="images/models/183.png" />
+	<file src="images/models/184.png" />
+	<file src="images/models/185.png" />
+	<file src="images/models/186.png" />
+	<file src="images/models/187.png" />
+	<file src="images/models/188.png" />
+	<file src="images/models/189.png" />
+	<file src="images/models/190.png" />
+	<file src="images/models/191.png" />
+	<file src="images/models/192.png" />
+	<file src="images/models/193.png" />
+	<file src="images/models/194.png" />
+	<file src="images/models/195.png" />
+	<file src="images/models/196.png" />
+	<file src="images/models/197.png" />
+	<file src="images/models/198.png" />
+	<file src="images/models/199.png" />
+	<file src="images/models/200.png" />
+	<file src="images/models/201.png" />
+	<file src="images/models/202.png" />
+	<file src="images/models/203.png" />
+	<file src="images/models/204.png" />
+	<file src="images/models/205.png" />
+	<file src="images/models/206.png" />
+	<file src="images/models/207.png" />
+	<file src="images/models/209.png" />
+	<file src="images/models/210.png" />
+	<file src="images/models/211.png" />
+	<file src="images/models/212.png" />
+	<file src="images/models/213.png" />
+	<file src="images/models/214.png" />
+	<file src="images/models/215.png" />
+	<file src="images/models/216.png" />
+	<file src="images/models/217.png" />
+	<file src="images/models/218.png" />
+	<file src="images/models/219.png" />
+	<file src="images/models/220.png" />
+	<file src="images/models/221.png" />
+	<file src="images/models/222.png" />
+	<file src="images/models/223.png" />
+	<file src="images/models/224.png" />
+	<file src="images/models/225.png" />
+	<file src="images/models/226.png" />
+	<file src="images/models/227.png" />
+	<file src="images/models/228.png" />
+	<file src="images/models/229.png" />
+	<file src="images/models/230.png" />
+	<file src="images/models/231.png" />
+	<file src="images/models/232.png" />
+	<file src="images/models/233.png" />
+	<file src="images/models/234.png" />
+	<file src="images/models/235.png" />
+	<file src="images/models/236.png" />
+	<file src="images/models/237.png" />
+	<file src="images/models/238.png" />
+	<file src="images/models/239.png" />
+	<file src="images/models/240.png" />
+	<file src="images/models/241.png" />
+	<file src="images/models/242.png" />
+	<file src="images/models/243.png" />
+	<file src="images/models/244.png" />
+	<file src="images/models/245.png" />
+	<file src="images/models/246.png" />
+	<file src="images/models/247.png" />
+	<file src="images/models/248.png" />
+	<file src="images/models/249.png" />
+	<file src="images/models/250.png" />
+	<file src="images/models/251.png" />
+	<file src="images/models/252.png" />
+	<file src="images/models/253.png" />
+	<file src="images/models/254.png" />
+	<file src="images/models/255.png" />
+	<file src="images/models/256.png" />
+	<file src="images/models/257.png" />
+	<file src="images/models/258.png" />
+	<file src="images/models/259.png" />
+	<file src="images/models/260.png" />
+	<file src="images/models/261.png" />
+	<file src="images/models/262.png" />
+	<file src="images/models/263.png" />
+	<file src="images/models/264.png" />
+	<file src="images/models/265.png" />
+	<file src="images/models/266.png" />
+	<file src="images/models/267.png" />
+	<file src="images/models/268.png" />
+	<file src="images/models/269.png" />
+	<file src="images/models/270.png" />
+	<file src="images/models/271.png" />
+	<file src="images/models/272.png" />
+	<file src="images/models/274.png" />
+	<file src="images/models/275.png" />
+	<file src="images/models/276.png" />
+	<file src="images/models/277.png" />
+	<file src="images/models/278.png" />
+	<file src="images/models/279.png" />
+	<file src="images/models/280.png" />
+	<file src="images/models/281.png" />
+	<file src="images/models/282.png" />
+	<file src="images/models/283.png" />
+	<file src="images/models/284.png" />
+	<file src="images/models/285.png" />
+	<file src="images/models/286.png" />
+	<file src="images/models/287.png" />
+	<file src="images/models/288.png" />
+	<file src="images/models/290.png" />
+	<file src="images/models/291.png" />
+	<file src="images/models/292.png" />
+	<file src="images/models/293.png" />
+	<file src="images/models/294.png" />
+	<file src="images/models/295.png" />
+	<file src="images/models/296.png" />
+	<file src="images/models/297.png" />
+	<file src="images/models/298.png" />
+	<file src="images/models/299.png" />
+	<file src="images/models/300.png" />
+	<file src="images/models/301.png" />
+	<file src="images/models/302.png" />
+	<file src="images/models/303.png" />
+	<file src="images/models/304.png" />
+	<file src="images/models/305.png" />
+	<file src="images/models/306.png" />
+	<file src="images/models/307.png" />
+	<file src="images/models/308.png" />
+	<file src="images/models/309.png" />
+	<file src="images/models/310.png" />
+	<file src="images/models/311.png" />
+	<file src="images/models/312.png" />
+</meta>

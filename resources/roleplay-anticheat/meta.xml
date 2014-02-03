@@ -1,0 +1,9 @@
+<meta>
+	<!-- Configuration -->
+	<info author="FairPlay Gaming" name="roleplay-anticheat" description="Anti-cheat management resource." type="script" />
+	<min_mta_version server="1.3.4-0.00000" client="1.3.4-0.00000" />
+	
+	<!-- Main -->
+	<script src="c_anticheat.lua" type="client" cache="false" />
+	<script src="s_anticheat.lua" type="server" />
+</meta>

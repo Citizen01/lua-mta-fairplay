@@ -1,0 +1,64 @@
+<!--
+	- FairPlay Gaming: Roleplay
+	
+	This program is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation; either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <http://www.gnu.org/licenses/>.
+	
+	(c) Copyright 2014 FairPlay Gaming. All rights reserved.
+-->
+
+<meta>
+	<!-- Configuration -->
+	<info author="FairPlay Gaming" name="roleplay-vehicles" description="Vehicles management resource." type="script" />
+	<min_mta_version server="1.3.4-0.00000" client="1.3.4-0.00000" />
+	
+	<!-- Main -->
+	<script src="g_description.lua" type="shared" cache="false" />
+	<script src="c_description.lua" type="client" cache="false" />
+	<script src="s_description.lua" type="server" />
+	<script src="s_vehicles.lua" type="server" />
+	<script src="s_fuel.lua" type="server" />
+	
+	<!-- Exports -->
+	<script src="exports/shared_exports.lua" type="shared" cache="false" />
+	<export function="getElementSpeed" type="shared" />
+	<export function="isVehicleEmpty" type="shared" />
+	<export function="getVehicleDescription" type="shared" />
+	<export function="getVehicleID" type="shared" />
+	<export function="getVehicleRealID" type="shared" />
+	<export function="getVehicleRealType" type="shared" />
+	<export function="getVehicleOwner" type="shared" />
+	<export function="getVehicleGearType" type="shared" />
+	<export function="getVehicleOwnerName" type="shared" />
+	<export function="getVehicleLastUsed" type="shared" />
+	<export function="getVehicleJobID" type="shared" />
+	<export function="getVehicleJob" type="shared" />
+	<export function="getVehicleFuel" type="shared" />
+	<export function="getVehicleFaction" type="shared" />
+	<export function="isVehicleTinted" type="shared" />
+	<export function="isVehicleWindowsDown" type="shared" />
+	<export function="isVehicleHandbraked" type="shared" />
+	<export function="isPlayerInVehicle" type="shared" />
+	<export function="getVehicle" type="shared" />
+	
+	<script src="exports/server_exports.lua" type="server" />
+	<export function="getVehicleRealFuel" type="server" />
+	<export function="isVehicleEngineOn" type="server" />
+	
+	<script src="exports/client_exports.lua" type="client" cache="false" />
+	<export function="getPlayerStreet" type="client" />
+	<export function="getPlayerSpeedLimit" type="client" />
+	
+	<export function="getVehicleDoors" type="shared" />
+	<export function="addVehicle" type="server" />
+</meta>

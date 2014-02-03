@@ -1,0 +1,51 @@
+<!--
+	- FairPlay Gaming: Roleplay
+	
+	This program is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation; either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <http://www.gnu.org/licenses/>.
+	
+	(c) Copyright 2014 FairPlay Gaming. All rights reserved.
+-->
+
+<meta>
+	<!-- Configuration -->
+	<info author="FairPlay Gaming" name="roleplay-interiors" description="Interior management resource." type="script" />
+	<min_mta_version server="1.3.4-0.00000" client="1.3.4-0.00000" />
+	
+	<!-- Main -->
+	<script src="c_elevators.lua" type="client" cache="false" />
+	<script src="s_elevators.lua" type="server" />
+	<script src="c_interiors.lua" type="client" cache="false" />
+	<script src="s_interiors.lua" type="server" />
+	<script src="interiors/createObject.lua" type="client" cache="false" />
+	
+	<export function="setInteriorOwner" type="server" />
+	
+	<!-- Exports -->
+	<script src="exports/shared_exports.lua" type="shared" cache="false" />
+	<export function="getElevator" type="shared" />
+	<export function="getElevatorID" type="shared" />
+	<export function="getElevatorOpenType" type="shared" />
+	<export function="getInteriorID" type="shared" />
+	<export function="getInteriorType" type="shared" />
+	<export function="getInteriorCost" type="shared" />
+	<export function="getInteriorPrice" type="shared" />
+	<export function="getInteriorName" type="shared" />
+	<export function="getInteriorOwner" type="shared" />
+	<export function="getInteriorOwnerName" type="shared" />
+	<export function="getInteriorLastUsed" type="shared" />
+	<export function="isInteriorForSale" type="shared" />
+	<export function="isInteriorLocked" type="shared" />
+	<export function="isInteriorDisabled" type="shared" />
+	<export function="getInterior" type="shared" />
+</meta>

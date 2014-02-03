@@ -1,0 +1,52 @@
+<!--
+	- FairPlay Gaming: Roleplay
+	
+	This program is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation; either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <http://www.gnu.org/licenses/>.
+	
+	(c) Copyright 2014 FairPlay Gaming. All rights reserved.
+-->
+
+<meta>
+	<!-- Configuration -->
+	<info author="FairPlay Gaming" name="roleplay-items" description="Item management resource." type="script" />
+	<min_mta_version server="1.3.4-0.00000" client="1.3.4-0.00000" />
+	
+	<script src="c_worlditems.lua" type="client" cache="false" />
+	<script src="s_items.lua" type="server" />
+	<script src="s_itemuse.lua" type="server" />
+	<script src="s_worlditems.lua" type="server" />
+	
+	<!-- Exports -->
+	<script src="exports/shared_exports.lua" type="shared" cache="false" />
+	<export function="getItem" type="shared" />
+	<export function="getItemByName" type="shared" />
+	<export function="getItems" type="shared" />
+	<export function="getItemName" type="shared" />
+	<export function="getItemDescription" type="shared" />
+	<export function="getItemValue" type="shared" />
+	<export function="getItemModel" type="shared" />
+	<export function="getItemOffset" type="shared" />
+	<export function="getItemAlpha" type="shared" />
+	<export function="isItemCollisionsEnabled" type="shared" />
+	<export function="getItemType" type="shared" />
+	<export function="getItemWeight" type="shared" />
+	<export function="isWorldItem" type="shared" />
+	
+	<export function="loadItems" type="server" />
+	<export function="getPlayerItems" type="server" />
+	<export function="giveItem" type="server" />
+	<export function="takeItem" type="server" />
+	<export function="hasItem" type="server" />
+	<export function="getPlayerItemValue" type="server" />
+</meta>

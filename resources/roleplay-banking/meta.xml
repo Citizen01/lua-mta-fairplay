@@ -1,0 +1,46 @@
+<!--
+	- FairPlay Gaming: Roleplay
+	
+	This program is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation; either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <http://www.gnu.org/licenses/>.
+	
+	(c) Copyright 2014 FairPlay Gaming. All rights reserved.
+-->
+
+<meta>
+	<!-- Configuration -->
+	<info author="FairPlay Gaming" name="roleplay-banking" description="Banking management resource." type="script" />
+	<min_mta_version server="1.3.4-0.00000" client="1.3.4-0.00000" />
+	
+	<!-- Main -->
+	<script src="c_banking.lua" type="client" cache="false" />
+	<script src="s_banking.lua" type="server" />
+	
+	<!-- Exports -->
+	<script src="exports/shared_exports.lua" type="shared" cache="false" />
+	<export function="getATMID" type="shared" />
+	<export function="getATMDeposit" type="shared" />
+	<export function="getATMWithdraw" type="shared" />
+	<export function="getATMLimit" type="shared" />
+	<export function="getATM" type="shared" />
+	<export function="getFormattedValue" type="shared" />
+	
+	<script src="exports/server_exports.lua" type="server" />
+	<export function="getBankValue" type="server" />
+	<export function="setBankValue" type="server" />
+	<export function="takeBankValue" type="server" />
+	<export function="giveBankValue" type="server" />
+	<export function="getStateBenefitValue" type="server" />
+	<export function="getStatePropertyTaxValue" type="server" />
+	<export function="getStateVehicleTaxValue" type="server" />
+</meta>

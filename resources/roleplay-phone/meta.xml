@@ -1,0 +1,65 @@
+<!--
+	- FairPlay Gaming: Roleplay
+	
+	This program is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation; either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <http://www.gnu.org/licenses/>.
+	
+	(c) Copyright 2014 FairPlay Gaming. All rights reserved.
+-->
+
+<meta>
+	<!-- Configuration -->
+	<info author="FairPlay Gaming" name="roleplay-phone" description="Phone management resource." type="script" />
+	<min_mta_version server="1.3.4-0.00000" client="1.3.4-0.00000" />
+	
+	<!-- Main -->
+	<script src="c_phone.lua" type="client" cache="false" />
+	<script src="s_phone.lua" type="server" />
+	
+	<!-- Exports -->
+	<script src="exports/shared_exports.lua" type="shared" cache="false" />
+	<export function="isPlayerOnPhone" type="shared" />
+	<export function="isPlayerBeingCalled" type="shared" />
+	<export function="isPlayerCalling" type="shared" />
+	
+	<file src="ringtones/1.mp3" />
+	<file src="ringtones/3.mp3" />
+	<file src="ringtones/4.mp3" />
+	<file src="ringtones/5.mp3" />
+	<file src="ringtones/6.mp3" />
+	<file src="ringtones/7.mp3" />
+	<file src="ringtones/8.mp3" />
+	<file src="ringtones/9.mp3" />
+	<file src="ringtones/10.mp3" />
+	<file src="ringtones/11.mp3" />
+	<file src="ringtones/12.mp3" />
+	<file src="ringtones/13.mp3" />
+	<file src="ringtones/14.mp3" />
+	<file src="ringtones/15.mp3" />
+	<file src="ringtones/16.mp3" />
+	<file src="ringtones/17.mp3" />
+	<file src="ringtones/18.mp3" />
+	<file src="ringtones/19.mp3" />
+	<file src="ringtones/20.mp3" />
+	
+	<file src="messagetones/1.mp3" />
+	<file src="messagetones/3.mp3" />
+	<file src="messagetones/4.mp3" />
+	<file src="messagetones/5.mp3" />
+	<file src="messagetones/6.mp3" />
+	<file src="messagetones/7.mp3" />
+	<file src="messagetones/8.mp3" />
+	<file src="messagetones/9.mp3" />
+	<file src="messagetones/10.mp3" />
+	<file src="messagetones/11.mp3" />
+</meta>

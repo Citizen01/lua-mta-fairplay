@@ -1,0 +1,63 @@
+<!--
+	- FairPlay Gaming: Roleplay
+	
+	This program is free software; you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation; either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program. If not, see <http://www.gnu.org/licenses/>.
+	
+	(c) Copyright 2014 FairPlay Gaming. All rights reserved.
+-->
+
+<meta>
+	<!-- Configuration -->
+	<info author="FairPlay Gaming" name="roleplay-weather" description="Weather management resource." type="script" />
+	<min_mta_version server="1.3.4-0.00000" client="1.3.4-0.00000" />
+	
+	<!-- Main -->
+	<script src="c_weather.lua" type="client" cache="false" />
+	<script src="s_weather.lua" type="server" />
+	
+	<!-- Snow -->
+	<file src="snow/direction_image.png" />
+	<file src="snow/direction_pointer.png" />
+	
+	<file src="snow/flakes/cartoon_tile.png" />
+	<file src="snow/flakes/real_tile.png" />
+	
+	<script src="snow/c_snow.lua" type="client" cache="false" />
+	<script src="snow/c_snow_gui.lua" type="client" cache="false" />
+	<script src="snow/s_snow.lua" type="server"/>
+	
+	<export function="updateSnowType" type="client" />
+	<export function="updateSnowDensity" type="client" />
+	<export function="updateSnowWindDirection" type="client" />
+	<export function="updateSnowWindSpeed" type="client" />
+	<export function="updateSnowflakeSize" type="client" />
+	<export function="updateSnowJitter" type="client" />
+	<export function="startSnow" type="client" />
+	<export function="stopSnow" type="client" />
+	<export function="setGuiEnabled" type="client" />
+	<export function="setSnowToggle" type="client" />
+	
+	<script src="snow/c_shader.lua" type="client" cache="false" />
+	
+	<file src="snow/images/smallnoise3d.dds" type="client" />
+	<file src="snow/shaders/snow_ground.fx" type="client" />
+	<file src="snow/shaders/snow_trees.fx" type="client" />
+	<file src="snow/shaders/snow_naughty_trees.fx" type="client" />
+	<file src="snow/shaders/mta-helper.fx" type="client" />
+	
+	<settings>
+		<setting name="gui_enabled" value="[false]" />
+		<setting name="snow_toggle" value="[true]" />
+	</settings>
+</meta>

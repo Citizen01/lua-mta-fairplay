@@ -1,0 +1,10 @@
+<meta>
+	<!-- Configuration -->
+	<info author="FairPlay Gaming" name="roleplay-animations" description="Animation management resource." type="script" />
+	<min_mta_version server="1.3.4-0.00000" client="1.3.4-0.00000" />
+	
+	<!-- Animation list by Mawej -->
+	<script src="c_animmenu.lua" type="client" cache="false" />
+	<script src="s_animmenu.lua" type="server" />
+	<config src="animations.xml" type="client" />
+</meta>
