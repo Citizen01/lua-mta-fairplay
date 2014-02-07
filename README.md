@@ -1,4 +1,18 @@
 ## FairPlay Gaming MTA
+### Installation
+
+Simply place all the resources into your `resources` folder. After that you have to go into your `mtaserver.conf` and add the following line.
+
+```lua
+<resource src="roleplay-initializer" startup="1" default="true" protected="1" />
+```
+
+Make sure you set the MySQL configuration in `roleplay-accounts/s_accounts.lua` file. If you want to synchronize data properly with a web server (used for player tracking and real-time weather synchronization), add your server information into `roleplay-accounts/s_webserver.lua`. Make sure you've uploaded web files into your website, as well. You can set the server address in `roleplay-weather` resource, and `roleplay-accounts/s_sync.lua` where the `sendPlayerAmount` function calls for a remote page.
+
+MySQL database dump is located within the repository, so make sure to import that to your database server.
+
+I do not offer direct support with the gamemode as this is not really a public project, I uploaded this for other reasons.
+
 ### Description
 
 You have just arrived to Los Santos. The city of the rich and the city of the poor - Vinewood stars and gangbangers through out the city. Take a peek behind the Vinewood hills at the country side or live among the famous stars at Richman district. It's all your choice.
