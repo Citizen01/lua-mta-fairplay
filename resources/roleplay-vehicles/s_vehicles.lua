@@ -519,7 +519,7 @@ addEventHandler("onVehicleStartExit", root,
 				setVehicleLocked(source, false)
 			end
 		else
-			if (isPlayerInVehicle(player)) then
+			if (isPlayerRealInVehicle(player)) then
 				removeElementData(player, "roleplay:characters.invehicle")
 			end
 			
@@ -563,7 +563,7 @@ function toggleEngine(player, cmd)
 	local _player
 	if (not player) and (source) and (getElementType(source) == "player") then _player = source elseif (player) then _player = player end
 	if (not exports['roleplay-accounts']:isClientPlaying(_player)) then return end
-	if (not isPlayerInVehicle(_player)) then return end
+	if (not isPlayerRealInVehicle(_player)) then return end
 	local vehicle = getPedOccupiedVehicle(_player)
 	if (not vehicle) then return end
 	if (getVehicleController(vehicle) == _player) then
@@ -645,7 +645,7 @@ function toggleLock(player, cmd)
 	local _player
 	if (not player) and (source) and (getElementType(source) == "player") then _player = source elseif (player) then _player = player end
 	if (not exports['roleplay-accounts']:isClientPlaying(_player)) then return end
-	if (isPlayerInVehicle(_player)) then
+	if (isPlayerRealInVehicle(_player)) then
 		local vehicle = getPedOccupiedVehicle(_player)
 		if (not vehicle) then return end
 		if (getPedOccupiedVehicleSeat(_player) == 0) or (getPedOccupiedVehicleSeat(_player) == 1) then
@@ -696,7 +696,7 @@ function toggleLights(player, cmd)
 	local _player
 	if (not player) and (source) and (getElementType(source) == "player") then _player = source elseif (player) then _player = player end
 	if (not exports['roleplay-accounts']:isClientPlaying(_player)) then return end
-	if (not isPlayerInVehicle(_player)) then return end
+	if (not isPlayerRealInVehicle(_player)) then return end
 	local vehicle = getPedOccupiedVehicle(_player)
 	if (not vehicle) then return end
 	if (getPedOccupiedVehicleSeat(_player) == 0) then
@@ -734,7 +734,7 @@ addCommandHandler({"toghandbrake", "handbrake"}, toggleHandbrake)
 addCommandHandler({"seatbelt", "togseatbelt"},
 	function(player, cmd)
 		if (not exports['roleplay-accounts']:isClientPlaying(player)) then return end
-		if (not isPlayerInVehicle(player)) then return end
+		if (not isPlayerRealInVehicle(player)) then return end
 		if (not isPedInVehicle(player)) then return end
 		local vehicle = getPedOccupiedVehicle(player)
 		if (vehicle) then
@@ -759,7 +759,7 @@ addCommandHandler({"seatbelt", "togseatbelt"},
 addCommandHandler({"togwin", "togwindows", "togwindow"},
 	function(player, cmd)
 		if (not exports['roleplay-accounts']:isClientPlaying(player)) then return end
-		if (not isPlayerInVehicle(player)) then return end
+		if (not isPlayerRealInVehicle(player)) then return end
 		if (not isPedInVehicle(player)) then return end
 		local vehicle = getPedOccupiedVehicle(player)
 		if (vehicle) then

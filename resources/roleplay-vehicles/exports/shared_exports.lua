@@ -51,14 +51,10 @@ function getVehicleDescription(element)
 	return tostring(getElementData(element, "roleplay:vehicles.description"))
 end
 
-function getVehicleID(element)
+function getVehicleRealID(element)
 	if (not element) or (getElementType(element) ~= "vehicle") then return false, 1 end
 	if (not tonumber(getElementData(element, "roleplay:vehicles.id"))) then return -1 end
 	return tonumber(getElementData(element, "roleplay:vehicles.id"))
-end
-
-function getVehicleRealID(element)
-	return getVehicleID(element)
 end
 
 function getVehicleRealType(element)
@@ -147,7 +143,7 @@ function isVehicleHandbraked(element)
 	end
 end
 
-function isPlayerInVehicle(element)
+function isPlayerRealInVehicle(element)
 	if (not element) or (getElementType(element) ~= "player") then return false, 1 end
 	if (not tonumber(getElementData(element, "roleplay:characters.invehicle"))) then return false, 3 end
 	local elementData = tonumber(getElementData(element, "roleplay:characters.invehicle"))
@@ -165,7 +161,7 @@ function getVehicle(id)
 	local id = tonumber(id)
 	local matches = {}
 	for i,v in ipairs(getElementsByType("vehicle")) do
-		if (getVehicleID(v)) and (getVehicleID(v) == id) then
+		if (getVehicleRealID(v)) and (getVehicleRealID(v) == id) then
 			table.insert(matches, v)
 		end
 	end

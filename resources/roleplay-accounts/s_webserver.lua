@@ -21,7 +21,7 @@ local web_connection = nil
 local web_databaseConfig = {
 	["type"] = "mysql",
 	["table"] = "",
-	["hostname"] = "",
+	["hostname"] = "127.0.0.1",
 	["username"] = "",
 	["password"] = ""
 }

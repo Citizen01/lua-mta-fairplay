@@ -22,8 +22,8 @@
 	<info author="FairPlay Gaming" name="roleplay-shaders" description="Shader management resource." type="script" />
 	<min_mta_version server="1.3.4-0.00000" client="1.3.4-0.00000" />
 	
-	<script src="c_dofbokeh.luac" type="client" cache="false" />
-	<script src="c_rtpool.luac" type="client" cache="false" />
+	<script src="c_dofbokeh.lua" type="client" cache="false" />
+	<script src="c_rtpool.lua" type="client" cache="false" />
 	<file src="shaders/DoFBokeh.fx" type="client" />
 	<file src="shaders/GetDepthPix.fx" type="client" />
 	<file src="shaders/mta-helper.fx" type="client" />

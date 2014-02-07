@@ -262,7 +262,7 @@ addEventHandler("onClientClick", root,
 	function(button, state, absoluteX, absoluteY, worldX, worldY, worldZ, clickedElement)
 		if (button == "right") and (state == "up") then
 			if (clickedElement) and (getElementType(clickedElement) == "vehicle") then
-				if (getVehicleID(clickedElement)) and (getVehicleRealType(clickedElement) > 0) then
+				if (getVehicleRealID(clickedElement)) and (getVehicleRealType(clickedElement) > 0) then
 					local x, y, z = getElementPosition(localPlayer)
 					local vx, vy, vz = getElementPosition(clickedElement)
 					if (getDistanceBetweenPoints3D(x, y, z, vx, vy, vz) <= 6) and (getElementInterior(localPlayer) == getElementInterior(clickedElement)) and (getElementDimension(localPlayer) == getElementDimension(clickedElement)) then

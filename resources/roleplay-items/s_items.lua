@@ -290,7 +290,7 @@ addCommandHandler("takeitem",
 							if (bDeleted) then
 								if (isPedInVehicle(target)) then
 									local vehicle = getPedOccupiedVehicle(target)
-									if (getVehicleController(vehicle) == target) and (exports['roleplay-vehicles']:getVehicleID(vehicle) == tonumber(rvalue)) then
+									if (getVehicleController(vehicle) == target) and (exports['roleplay-vehicles']:getVehicleRealID(vehicle) == tonumber(rvalue)) then
 										setElementData(vehicle, "roleplay:vehicles.engine", 0, false)
 										setVehicleEngineState(vehicle, false)
 									end

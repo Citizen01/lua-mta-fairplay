@@ -25,7 +25,7 @@ local connection = nil
 local databaseConfig = {
 	["type"] = "mysql",
 	["table"] = "",
-	["hostname"] = "",
+	["hostname"] = "127.0.0.1",
 	["username"] = "",
 	["password"] = ""
 }
@@ -124,6 +124,7 @@ function reconnectSQL()
 		reconnecting = false
 		outputServerLog("Notice: MySQL connection is established!")
 		testSQLConnection()
+		loadKilledCharacters()
 	end
 	return true
 end

@@ -71,7 +71,7 @@ addEventHandler("onPlayerJoin", root,
 addCommandHandler("togsiren",
 	function(player, cmd)
 		if (not exports['roleplay-accounts']:isClientPlaying(player)) then return end
-		if (not exports['roleplay-vehicles']:isPlayerInVehicle(player)) then return end
+		if (not exports['roleplay-vehicles']:isPlayerRealInVehicle(player)) then return end
 		local vehicle = getPedOccupiedVehicle(player)
 		if (vehicle) and (getVehicleController(vehicle) == player) then
 			if (getElementData(vehicle, "roleplay:vehicles.siren")) then
@@ -87,7 +87,7 @@ addCommandHandler("togsiren",
 addCommandHandler("togemlights",
 	function(player, cmd)
 		if (not exports['roleplay-accounts']:isClientPlaying(player)) then return end
-		if (not exports['roleplay-vehicles']:isPlayerInVehicle(player)) then return end
+		if (not exports['roleplay-vehicles']:isPlayerRealInVehicle(player)) then return end
 		local vehicle = getPedOccupiedVehicle(player)
 		if (vehicle) and (getVehicleController(vehicle) == player) then
 			if (getElementData(vehicle, "roleplay:vehicles.strobe")) then

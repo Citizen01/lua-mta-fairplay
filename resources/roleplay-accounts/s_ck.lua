@@ -19,33 +19,38 @@
 
 local ckCharacters = {}
 
-addEventHandler("onResourceStart", resourceRoot,
-	function()
-		local query = dbQuery(getSQLConnection(), "SELECT * FROM `??` WHERE `??` = '??'", "characters", "cked", 1)
-		if (query) then
-			local result, num_affected_rows, last_insert_id = dbPoll(query, -1)
-			if (num_affected_rows > 0) then
-				if (num_affected_rows == 1) then
-					outputDebugString("1 character killed pedestrian is about to be loaded.")
-				else
-					outputDebugString(num_affected_rows .. " character killed pedestrians are about to be loaded.")
-				end
-				
-				for result,row in pairs(result) do
-					ckCharacters[row["id"]] = createPed(row["model"], row["posX"], row["posY"], row["posZ"], row["rotZ"])
-					setElementInterior(ckCharacters[row["id"]], row["interior"])
-					setElementDimension(ckCharacters[row["id"]], row["dimension"])
-					setElementData(ckCharacters[row["id"]], "roleplay:ck.id", row["id"], false)
-					setElementData(ckCharacters[row["id"]], "roleplay:ck.name", row["characterName"], false)
-					setElementData(ckCharacters[row["id"]], "roleplay:ck.cod", row["CoD"], false)
-					killPed(ckCharacters[row["id"]])
-				end
+function loadKilledCharacters()
+	if (#ckCharacters > 0) then
+		for i,v in pairs(ckCharacters) do
+			destroyElement(v)
+		end
+		ckCharacters = {}
+	end
+	
+	local query = dbQuery(getSQLConnection(), "SELECT * FROM `??` WHERE `??` = '??'", "characters", "cked", 1)
+	if (query) then
+		local result, num_affected_rows, last_insert_id = dbPoll(query, -1)
+		if (num_affected_rows > 0) then
+			if (num_affected_rows == 1) then
+				outputDebugString("1 character killed pedestrian is about to be loaded.")
 			else
-				outputDebugString("0 character killed pedestrians loaded.")
+				outputDebugString(num_affected_rows .. " character killed pedestrians are about to be loaded.")
 			end
+			
+			for result,row in pairs(result) do
+				ckCharacters[row["id"]] = createPed(row["model"], row["posX"], row["posY"], row["posZ"], row["rotZ"])
+				setElementInterior(ckCharacters[row["id"]], row["interior"])
+				setElementDimension(ckCharacters[row["id"]], row["dimension"])
+				setElementData(ckCharacters[row["id"]], "roleplay:ck.id", row["id"], false)
+				setElementData(ckCharacters[row["id"]], "roleplay:ck.name", row["characterName"], false)
+				setElementData(ckCharacters[row["id"]], "roleplay:ck.cod", row["CoD"], false)
+				killPed(ckCharacters[row["id"]])
+			end
+		else
+			outputDebugString("0 character killed pedestrians loaded.")
 		end
 	end
-)
+end
 
 function findCharacterKill(arg)
 	if (not arg) then return false end

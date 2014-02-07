@@ -87,7 +87,7 @@ local function enableSpeedometer()
 end
 
 local function checkSpeedometer()
-	if (exports['roleplay-vehicles']:isPlayerInVehicle(localPlayer)) then
+	if (exports['roleplay-vehicles']:isPlayerRealInVehicle(localPlayer)) then
 		if (not isVisible) then
 			enableSpeedometer()
 		end

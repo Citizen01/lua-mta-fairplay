@@ -114,7 +114,7 @@ function outputLocalChat(player, message, fdistance)
 			local restMessage = string.gsub(message:sub(2), "  ", " ")
 			
 			if (theDistance < 60) then
-				if (exports['roleplay-vehicles']:isPlayerInVehicle(player)) then
+				if (exports['roleplay-vehicles']:isPlayerRealInVehicle(player)) then
 					if (exports['roleplay-accounts']:isClientTrialAdmin(v)) and (exports['roleplay-accounts']:getAdminState(v) == 1) then
 						triggerClientEvent(v, ":_displayChatBubble_:", v, firstLetter .. restMessage, player)
 						outputLongChatBox(" " .. prefix .. (bike[getElementModel(vehicle)] and "(On Bike" or "(In " .. (getVehicleType(vehicle) == "Automobile" and "Car" or getVehicleType(vehicle))) .. ") [" .. getLanguageName(senderLang) .. "] " .. exports['roleplay-accounts']:getRealPlayerName(player) .. " says: " .. firstLetter .. restMessage, v, r, g, b, false)
@@ -145,7 +145,7 @@ function outputLocalChat(player, message, fdistance)
 						end
 					end
 				else
-					if (exports['roleplay-vehicles']:isPlayerInVehicle(v)) then
+					if (exports['roleplay-vehicles']:isPlayerRealInVehicle(v)) then
 						local vehicle = getPedOccupiedVehicle(v)
 						if (exports['roleplay-accounts']:isClientTrialAdmin(v)) and (exports['roleplay-accounts']:getAdminState(v) == 1) then
 							triggerClientEvent(v, ":_displayChatBubble_:", v, firstLetter .. restMessage, player)

@@ -131,7 +131,7 @@ function displayFactionMenu()
 			if (exports['roleplay-vehicles']:getVehicleFaction(vehicle)) then
 				if (exports['roleplay-vehicles']:getVehicleFaction(vehicle) == factionData.id) then
 					local row = guiGridListAddRow(factionMenu.gridlist[2])
-					guiGridListSetItemText(factionMenu.gridlist[2], row, 1, exports['roleplay-vehicles']:getVehicleID(vehicle), false, true)
+					guiGridListSetItemText(factionMenu.gridlist[2], row, 1, exports['roleplay-vehicles']:getVehicleRealID(vehicle), false, true)
 					guiGridListSetItemText(factionMenu.gridlist[2], row, 2, getVehicleName(vehicle), false, false)
 					guiGridListSetItemText(factionMenu.gridlist[2], row, 3, string.upper(getVehiclePlateText(vehicle)), false, false)
 					

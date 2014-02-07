@@ -22,7 +22,7 @@ addEventHandler(":_doFetchOptionMenuData_:", root,
 	function(vehicle)
 		if (source ~= client) then return end
 		if (not vehicle) or (not isElement(vehicle)) then return end
-		if (exports['roleplay-items']:hasItem(client, 7, getVehicleID(vehicle))) or
+		if (exports['roleplay-items']:hasItem(client, 7, getVehicleRealID(vehicle))) or
 		(getVehicleController(vehicle) == client) or
 		(exports['roleplay-accounts']:isClientTrialAdmin(client) and exports['roleplay-accounts']:getAdminState(client) == 1) or
 		(tonumber(getElementData(vehicle, "roleplay:vehicles.job")) and tonumber(getElementData(vehicle, "roleplay:vehicles.job")) > 0 and tonumber(getElementData(vehicle, "roleplay:vehicles.job")) == exports['roleplay-accounts']:getCharacterJob(client)) or
@@ -36,7 +36,7 @@ addEvent(":_doToggleVehicleLockOption_:", true)
 addEventHandler(":_doToggleVehicleLockOption_:", root,
 	function(vehicle)
 		if (source ~= client) then return end
-		if (exports['roleplay-items']:hasItem(client, 7, getVehicleID(vehicle))) or
+		if (exports['roleplay-items']:hasItem(client, 7, getVehicleRealID(vehicle))) or
 		(getVehicleController(vehicle) == client) or
 		(exports['roleplay-accounts']:isClientTrialAdmin(client) and exports['roleplay-accounts']:getAdminState(client) == 1) or
 		(tonumber(getElementData(vehicle, "roleplay:vehicles.job")) and tonumber(getElementData(vehicle, "roleplay:vehicles.job")) > 0 and tonumber(getElementData(vehicle, "roleplay:vehicles.job")) == exports['roleplay-accounts']:getCharacterJob(client)) or
@@ -48,14 +48,14 @@ addEventHandler(":_doToggleVehicleLockOption_:", root,
 			if (playerVehicle) then
 				if (playerVehicle == vehicle) then
 					exports['roleplay-chat']:outputLocalActionMe(client, (locked == true and "locks" or "unlocks") .. " the vehicle doors.")
-					outputServerLog("Vehicles: " .. getPlayerName(client) .. " [" .. exports['roleplay-accounts']:getAccountName(client) .. "] " .. (locked == true and "locked" or "unlocked") .. " their " .. getVehicleName(vehicle) .. " (ID: " .. getVehicleID(vehicle) .. ").")
+					outputServerLog("Vehicles: " .. getPlayerName(client) .. " [" .. exports['roleplay-accounts']:getAccountName(client) .. "] " .. (locked == true and "locked" or "unlocked") .. " their " .. getVehicleName(vehicle) .. " (ID: " .. getVehicleRealID(vehicle) .. ").")
 				else
 					exports['roleplay-chat']:outputLocalActionMe(client, (locked == true and "locks" or "unlocks") .. " the " .. ((string.sub(name, string.len(name)-1) == "s") and name .. "'" or name .. "'s") .. " doors.")
-					outputServerLog("Vehicles: " .. getPlayerName(client) .. " [" .. exports['roleplay-accounts']:getAccountName(client) .. "] " .. (locked == true and "locked" or "unlocked") .. " " .. getVehicleName(vehicle) .. " remotely (ID: " .. getVehicleID(vehicle) .. ").")
+					outputServerLog("Vehicles: " .. getPlayerName(client) .. " [" .. exports['roleplay-accounts']:getAccountName(client) .. "] " .. (locked == true and "locked" or "unlocked") .. " " .. getVehicleName(vehicle) .. " remotely (ID: " .. getVehicleRealID(vehicle) .. ").")
 				end
 			else
 				exports['roleplay-chat']:outputLocalActionMe(client, (locked == true and "locks" or "unlocks") .. " the " .. ((string.sub(name, string.len(name)-1) == "s") and name .. "'" or name .. "'s") .. " doors.")
-				outputServerLog("Vehicles: " .. getPlayerName(client) .. " [" .. exports['roleplay-accounts']:getAccountName(client) .. "] " .. (locked == true and "locked" or "unlocked") .. " " .. getVehicleName(vehicle) .. " remotely (ID: " .. getVehicleID(vehicle) .. ").")
+				outputServerLog("Vehicles: " .. getPlayerName(client) .. " [" .. exports['roleplay-accounts']:getAccountName(client) .. "] " .. (locked == true and "locked" or "unlocked") .. " " .. getVehicleName(vehicle) .. " remotely (ID: " .. getVehicleRealID(vehicle) .. ").")
 			end
 			
 			setVehicleLocked(vehicle, locked)
@@ -85,10 +85,10 @@ addEvent(":_doSetVehicleDescOption_:", true)
 addEventHandler(":_doSetVehicleDescOption_:", root,
 	function(vehicle, newDescription)
 		if (source ~= client) then return end
-		if (exports['roleplay-items']:hasItem(client, 7, getVehicleID(vehicle))) or (exports['roleplay-accounts']:getAdminState(client) == 1) then
+		if (exports['roleplay-items']:hasItem(client, 7, getVehicleRealID(vehicle))) or (exports['roleplay-accounts']:getAdminState(client) == 1) then
 			setElementData(vehicle, "roleplay:vehicles.description", newDescription, true)
 			outputChatBox("Vehicle description is now updated.", client, 20, 245, 20, false)
-			outputServerLog("Vehicles: " .. getPlayerName(client) .. " [" .. exports['roleplay-accounts']:getAccountName(client) .. "] set their " .. getVehicleName(vehicle) .. " vehicle description (ID: " .. getVehicleID(vehicle) .. ").")
+			outputServerLog("Vehicles: " .. getPlayerName(client) .. " [" .. exports['roleplay-accounts']:getAccountName(client) .. "] set their " .. getVehicleName(vehicle) .. " vehicle description (ID: " .. getVehicleRealID(vehicle) .. ").")
 		else
 			outputChatBox("y u be so mean.", client, 245, 20, 20, false)
 		end

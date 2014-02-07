@@ -106,7 +106,7 @@ function getElementLogID(logSource)
 				return getPlayerSerial(logSource) .. ":noPLAYER"
 			end
 		elseif (type == "vehicle") then
-			local vehicleID = exports['roleplay-vehicles']:getVehicleID(logSource)
+			local vehicleID = exports['roleplay-vehicles']:getVehicleRealID(logSource)
 			if (vehicleID) then
 				return vehicleID .. ":inVEHICLE"
 			else
