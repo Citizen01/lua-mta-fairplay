@@ -11,6 +11,8 @@ Make sure you set the MySQL configuration in `roleplay-accounts/s_accounts.lua` 
 
 MySQL database dump is located within the repository, so make sure to import that to your database server.
 
+You might also have to set all resources in the admin ACL group in the `acl.xml` file in the `/deathmatch` folder of your server. This way you will avoid issues with remote connections and such.
+
 I do not offer direct support with the gamemode as this is not really a public project, I uploaded this for other reasons.
 
 ### Description
