@@ -7,7 +7,7 @@ Simply place all the resources into your `resources` folder. After that you have
 <resource src="roleplay-initializer" startup="1" default="true" protected="1" />
 ```
 
-Make sure you set the MySQL configuration in `roleplay-accounts/s_accounts.lua` file. If you want to synchronize data properly with a web server (used for player tracking and real-time weather synchronization), add your server information into `roleplay-accounts/s_webserver.lua`. Make sure you've uploaded web files into your website, as well. You can set the server address in `roleplay-weather` resource, and `roleplay-accounts/s_sync.lua` where the `sendPlayerAmount` function calls for a remote page.
+Make sure you set the MySQL configuration in `roleplay-accounts/s_accounts.lua` file. If you want to synchronize data properly with a web server (used for player tracking and real-time weather synchronization), add your server information into `roleplay-accounts/s_webserver.lua`. Make sure you've uploaded web files into your website, as well. You can set the server address in `roleplay-weather/s_weather.lua`, and `roleplay-accounts/s_sync.lua` where the `sendPlayerAmount` function calls for a remote page.
 
 MySQL database dump is located within the repository, so make sure to import that to your database server.
 
