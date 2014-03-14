@@ -1,5 +1,4 @@
 <?php
 	error_reporting(0);
-	mysql_connect("host", "user", "pass");
-	mysql_select_db("database");
+	$handler = mysqli_connect("host", "user", "pass", "database");
 ?>
