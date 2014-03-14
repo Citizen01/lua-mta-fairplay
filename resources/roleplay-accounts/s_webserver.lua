@@ -38,7 +38,7 @@ function reconnectWebSQL()
 	outputServerLog("Notice: MySQL reconnect incoming.")
 	reconnecting = true
 	destroyElement(web_connection)
-	web_connection = dbConnect(databaseConfig["type"], "dbname=" .. databaseConfig["table"] .. ";host=" .. databaseConfig["hostname"], databaseConfig["username"], databaseConfig["password"])
+	web_connection = dbConnect(web_databaseConfig["type"], "dbname=" .. web_databaseConfig["table"] .. ";host=" .. web_databaseConfig["hostname"], web_databaseConfig["username"], web_databaseConfig["password"])
 	if (not web_connection) then
 		outputServerLog("Error: MySQL web_connection is not established!")
 		setTimer(reconnectWebSQL, 1500, 1)
@@ -71,7 +71,7 @@ function testWebSQLConnection()
 	else
 		outputServerLog("Error: Could not test the query web_connection due to no stable MySQL web_connection.")
 		outputServerLog("... attempting a repair ...")
-		web_connection = dbConnect(databaseConfig["type"], "dbname=" .. databaseConfig["table"] .. ";host=" .. databaseConfig["hostname"], databaseConfig["username"], databaseConfig["password"])
+		web_connection = dbConnect(web_databaseConfig["type"], "dbname=" .. web_databaseConfig["table"] .. ";host=" .. web_databaseConfig["hostname"], web_databaseConfig["username"], web_databaseConfig["password"])
 		if (not web_connection) then
 			outputServerLog("... repair failed!")
 		else
@@ -82,7 +82,7 @@ end
 
 addEventHandler("onResourceStart", resourceRoot,
 	function()
-		web_connection = dbConnect(databaseConfig["type"], "dbname=" .. databaseConfig["table"] .. ";host=" .. databaseConfig["hostname"], databaseConfig["username"], databaseConfig["password"])
+		web_connection = dbConnect(web_databaseConfig["type"], "dbname=" .. web_databaseConfig["table"] .. ";host=" .. web_databaseConfig["hostname"], web_databaseConfig["username"], web_databaseConfig["password"])
 		
 		if (not web_connection) then
 			outputServerLog("Error: MySQL web_connection is not established!")
