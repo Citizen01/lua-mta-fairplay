@@ -19,6 +19,7 @@
 
 addEventHandler("onPlayerWasted", root,
 	function(ammo, killer, weapon, bodypart, stealth)
+		if (not isClientPlaying(source)) then return end
 		local player
 		
 		if (not source) then
