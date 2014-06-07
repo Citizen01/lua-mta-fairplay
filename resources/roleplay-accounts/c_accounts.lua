@@ -68,8 +68,8 @@ local texts = {
 	}
 }
 
-local illegalUsernames = {"fuck", "dick", "ass", "hole", "azz", "zz", "bitch", "root", "admin", "administrator", "mod", "moderator", "administration", "moderation", "fairplay", "fairplaygaming", "fpg", "fairplaygamingcommunity", "socialzgamingcommunity", "sgc", "mtateam", "mta", "mtasa", "multitheftauto", "justin bieber"}
-local illegalPasswords = {"123asd", "123456", "987654", "asd123", "123987", "987123", "asdasd", "asdfgh", "lollol", "lol123", "123lol", "lolled", "lmfao1", "111111", "omglol", "social", "socialz"}
+local illegalUsernames = {"fuck", "dick", "ass", "asshole", "bitch", "root", "admin", "administrator", "mod", "moderator", "administration", "moderation", "mtateam", "mta", "mtasa", "multitheftauto", "justin bieber"}
+local illegalPasswords = {"123asd", "123456", "987654", "asd123", "123987", "987123", "asdasd", "asdfgh", "lollol", "lol123", "123lol", "lolled", "lmfao1", "111111", "omglol"}
 local illegalCharacters = {"'", "/", "\\", "&", "+", "$", "#", "@"}
 
 function guiCenterElement(element, offsetX, offsetY)
