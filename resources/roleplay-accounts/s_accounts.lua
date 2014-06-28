@@ -24,10 +24,10 @@ local g_motd = false
 local connection = nil
 local databaseConfig = {
 	["type"] = "mysql",
-	["table"] = "", // Database ("table" name is confusing, I know)
-	["hostname"] = "127.0.0.1", // Hostname
-	["username"] = "", // Username
-	["password"] = "" // Password
+	["table"] = "", -- Database ("table" name is confusing, I know)
+	["hostname"] = "127.0.0.1", -- Hostname
+	["username"] = "", -- Username
+	["password"] = "" -- Password
 }
 
 local addCommandHandler_ = addCommandHandler
