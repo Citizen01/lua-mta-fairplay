@@ -428,14 +428,16 @@ addEventHandler("onVehicleEnter", root,
 		
 		if (exports['roleplay-accounts']:isClientTrialAdmin(player) and exports['roleplay-accounts']:getAdminState(player) == 1) then
 			if (getVehicleFaction(source)) then
-				outputChatBox("(( This " .. getVehicleName(source) .. " belongs to " .. (getVehicleFaction(source) == 666 and "Socialz's Secret Lounge" or exports['roleplay-factions']:getFactionByID(getVehicleFaction(source))["name"]) .. ". ))", player, 210, 160, 25, false)
+				outputChatBox("(( This " .. getVehicleName(source) .. " belongs to " .. exports['roleplay-factions']:getFactionByID(getVehicleFaction(source))["name"] .. ". ))", player, 210, 160, 25, false)
 			else
 				if (getVehicleOwnerName(source)) and (getVehicleOwnerName(source) ~= "nil") then
 					outputChatBox("(( This " .. getVehicleName(source) .. " belongs to " .. tostring(getVehicleOwnerName(source)) .. ". ))", player, 210, 160, 25, false)
-				elseif (tonumber(getElementData(source, "roleplay:vehicles.job")) > 0) and (tonumber(getElementData(source, "roleplay:vehicles.job")) ~= 3) then
+				elseif (getElementData(source, "roleplay:vehicles.job")) and (tonumber(getElementData(source, "roleplay:vehicles.job")) > 0) and (tonumber(getElementData(source, "roleplay:vehicles.job")) ~= 3) then
 					outputChatBox("(( This " .. getVehicleName(source) .. " belongs to Los Santos Transit. ))", player, 210, 160, 25, false)
-				elseif (tonumber(getElementData(source, "roleplay:vehicles.job")) == 3) then
+				elseif (getElementData(source, "roleplay:vehicles.job")) and (tonumber(getElementData(source, "roleplay:vehicles.job")) == 3) then
 					outputChatBox("(( This " .. getVehicleName(source) .. " belongs to Department of Motor Vehicles. ))", player, 210, 160, 25, false)
+				elseif (getElementData(source, "roleplay:vehicles.temp")) then
+					outputChatBox("(( This " .. getVehicleName(source) .. " is a temporary vehicle. ))", player, 210, 160, 25, false)
 				else
 					outputChatBox("(( This " .. getVehicleName(source) .. " belongs to an unknown person. ))", player, 210, 160, 25, false)
 				end
