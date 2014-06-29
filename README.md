@@ -7,11 +7,11 @@ Simply place all the resources into your `resources` folder. After that you have
 <resource src="roleplay-initializer" startup="1" default="true" protected="1" />
 ```
 
-Make sure you set the MySQL configuration in `roleplay-accounts/s_accounts.lua` file. If you want to synchronize data properly with a web server (used for player tracking and real-time weather synchronization), add your server information into `roleplay-accounts/s_webserver.lua`. Make sure you've uploaded web files into your website, as well. You can set the server address in `roleplay-weather/s_weather.lua`, and `roleplay-accounts/s_sync.lua` where the `sendPlayerAmount` function calls for a remote page.
+Make sure you set the MySQL configuration in `roleplay-accounts/s_accounts.lua` file. If you want to synchronize data properly with a web server (used for player tracking and real-time weather synchronization), add your server information into `roleplay-accounts/s_webserver.lua`. Make sure you've uploaded web files into your website as well. You can set the server address in `roleplay-weather/s_weather.lua`, and `roleplay-accounts/s_sync.lua` where the `sendPlayerAmount` function calls for a remote page. These are by default set to the public API URL address hosted by FairPlay Gaming, meaning you will not need to have a website unless you want to update your player count to a website and then display it on your forums for example - my website is not storing that data anywhere for obvious reasons.
 
 MySQL database dump is located within the repository, so make sure to import that to your database server.
 
-You might also have to set all resources in the admin ACL group in the `acl.xml` file in the `/deathmatch` folder of your server. This way you will avoid issues with remote connections and such.
+You might also have to set all resources in the admin ACL group in the `acl.xml` file in the `/deathmatch` folder of your server. This way you will avoid issues with remote connections and such. You may use the included `acl.xml` file for that instead of figuring it out yourself but I do not guarantee security for that.
 
 I do not offer direct support with the gamemode as this is not really a public project, I uploaded this for other reasons.
 
