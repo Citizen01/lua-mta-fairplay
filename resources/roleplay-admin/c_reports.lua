@@ -148,7 +148,7 @@ local function displayReportMenu()
 			local name = guiGetText(g_character_edit)
 			if (string.len(tostring(name)) > 2) or (name == "*") then
 				local description = guiGetText(g_description_memo)
-				if (string.len(tostring(description))-1 >= 10) and (string.len(tostring(description)))-1 <= 300) then
+				if (string.len(tostring(description))-1 >= 10) and (string.len(tostring(description))-1 <= 300) then
 					local target = exports['roleplay-accounts']:getPlayerFromPartialName(name:gsub(" ", "_"), localPlayer)
 					if (target) then
 						triggerServerEvent(":_submitReport_:", localPlayer, target, description, guiCheckBoxGetSelected(g_character_shot))
