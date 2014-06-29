@@ -24,10 +24,10 @@ local g_motd = false
 local connection = nil
 local databaseConfig = {
 	["type"] = "mysql",
-	["table"] = "", -- Database ("table" name is confusing, I know)
-	["hostname"] = "127.0.0.1", -- Hostname
-	["username"] = "", -- Username
-	["password"] = "" -- Password
+	["hostname"] = "127.0.0.1",
+	["database"] = "",
+	["username"] = "",
+	["password"] = ""
 }
 
 local addCommandHandler_ = addCommandHandler
@@ -116,7 +116,7 @@ function reconnectSQL()
 	outputServerLog("Notice: MySQL reconnect incoming.")
 	reconnecting = true
 	destroyElement(connection)
-	connection = dbConnect(databaseConfig["type"], "dbname=" .. databaseConfig["table"] .. ";host=" .. databaseConfig["hostname"], databaseConfig["username"], databaseConfig["password"])
+	connection = dbConnect(databaseConfig["type"], "dbname=" .. databaseConfig["database"] .. ";host=" .. databaseConfig["hostname"], databaseConfig["username"], databaseConfig["password"])
 	if (not connection) then
 		outputServerLog("Error: MySQL connection is not established!")
 		setTimer(reconnectSQL, 1500, 1)
@@ -150,7 +150,7 @@ function testSQLConnection()
 	else
 		outputServerLog("Error: Could not test the query connection due to no stable MySQL connection.")
 		outputServerLog("... attempting a repair ...")
-		connection = dbConnect(databaseConfig["type"], "dbname=" .. databaseConfig["table"] .. ";host=" .. databaseConfig["hostname"], databaseConfig["username"], databaseConfig["password"])
+		connection = dbConnect(databaseConfig["type"], "dbname=" .. databaseConfig["database"] .. ";host=" .. databaseConfig["hostname"], databaseConfig["username"], databaseConfig["password"])
 		if (not connection) then
 			outputServerLog("... repair failed!")
 		else
@@ -171,7 +171,7 @@ end, 30000, 0)
 addEventHandler("onResourceStart", resourceRoot,
 	function()
 		aclReload()
-		connection = dbConnect(databaseConfig["type"], "dbname=" .. databaseConfig["table"] .. ";host=" .. databaseConfig["hostname"], databaseConfig["username"], databaseConfig["password"])
+		connection = dbConnect(databaseConfig["type"], "dbname=" .. databaseConfig["database"] .. ";host=" .. databaseConfig["hostname"], databaseConfig["username"], databaseConfig["password"])
 		
 		if (not connection) then
 			outputServerLog("Error: MySQL connection is not established!")
