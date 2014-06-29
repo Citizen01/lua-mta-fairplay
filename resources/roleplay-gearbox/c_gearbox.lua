@@ -32,6 +32,7 @@ local function updateGear(state)
 	if (not gearType) then
 		toggleControl("accelerate", true)
 		toggleControl("brake_reverse", true)
+		return
 	end
 	
 	if (state == 1) then
