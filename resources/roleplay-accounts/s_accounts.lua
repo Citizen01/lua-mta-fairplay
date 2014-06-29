@@ -134,7 +134,7 @@ function testSQLConnection()
 		local query = dbQuery(connection, "SELECT `??` FROM `??` WHERE `??` = '??' LIMIT 1", "value", "config", "key", "motd")
 		if (query) then
 			local result, num_affected_rows, errmsg = dbPoll(query, -1)
-			if (num_affected_rows > 0) then
+			if (num_affected_rows > 0) and (type(result) == "table") then
 				for result,row in pairs(result) do
 					if (row["value"]) then
 						outputServerLog("Notice: Connection is working!")
@@ -728,7 +728,7 @@ addEventHandler(":_updateAccountSettingsF10_:", root,
 
 addEventHandler("onPlayerChangeNick", root,
 	function(old, new)
-		if (string.find(new, "FairPlay.")) then return end
+		if (string.find(new, exports['roleplay-anticheat']:getSafeNamePrefix() .. ".")) then return end
 		cancelEvent()
 		outputChatBox("Sorry, but we do not allow the change of nicknames on our server. Disconnect and change your nickname then instead.", source, 245, 20, 20, false)
 	end

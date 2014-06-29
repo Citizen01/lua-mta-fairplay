@@ -6,4 +6,7 @@
 	<!-- Main -->
 	<script src="c_anticheat.lua" type="client" cache="false" />
 	<script src="s_anticheat.lua" type="server" />
+	
+	<!-- Exports -->
+	<export function="getSafeNamePrefix" type="server" />
 </meta>

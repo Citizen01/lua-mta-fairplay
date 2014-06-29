@@ -19,6 +19,10 @@
 
 local playerNamePrefix = "FairPlayMTA"
 
+function getSafeNamePrefix()
+	return playerNamePrefix
+end
+
 addEvent(":_returnCheat_:", true)
 addEventHandler(":_returnCheat_:", root,
 	function(ret, cheat, gameSpeed, isNormalGameSpeed, gravity)
