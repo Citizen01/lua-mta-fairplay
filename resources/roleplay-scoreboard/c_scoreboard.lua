@@ -152,7 +152,7 @@ end
 
 local function toggleScoreboard(_, state)
 	if (not exports['roleplay-accounts']:isClientPlaying(localPlayer)) then return end
-	if (state == "down") then
+	if (state == "down") and (isShowing ~= true) then
 		isShowing = true
 		addEventHandler("onClientRender", root, dxDisplayScoreboard)
 	else
