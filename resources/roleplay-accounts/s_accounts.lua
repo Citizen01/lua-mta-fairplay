@@ -275,7 +275,7 @@ addEventHandler(":_submitLogin_:", root,
 				if (query) then
 					local result, num_affected_rows, errmsg = dbPoll(query, -1)
 					if (num_affected_rows > 0) then
-						local query = dbQuery(connection, "SELECT `??`, `??`, `??`, `??`, `??`, `??`, `??` FROM `??` WHERE `??` = '??' AND `??` = '??' LIMIT 1", "id", "admin_level", "admin_state", "loginDate", "option_1", "option_2", "option_3", "accounts", "username", username, "password", sha256(string.upper(password)))
+						local query = dbQuery(connection, "SELECT * FROM `??` WHERE `??` = '??' AND `??` = '??' LIMIT 1", "accounts", "username", username, "password", sha256(string.upper(password)))
 						if (query) then
 							local result, num_affected_rows = dbPoll(query, -1)
 							if (num_affected_rows > 0) then
