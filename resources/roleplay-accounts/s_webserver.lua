@@ -26,7 +26,7 @@ local web_databaseConfig = {
 	["password"] = ""
 }
 
-function getSQLConnection()
+function getWebSQLConnection()
 	if (not reconnecting) then
 		return web_connection
 	else
