@@ -55,7 +55,7 @@ function testWebSQLConnection()
 		local query = dbQuery(web_connection, "SELECT `??` FROM `??` WHERE `??` = '??' LIMIT 1", "value", "config", "key", "motd")
 		if (query) then
 			local result, num_affected_rows, errmsg = dbPoll(query, -1)
-			if (num_affected_rows > 0) then
+			if (num_affected_rows > 0) and (type(result) == "table") then
 				for result,row in pairs(result) do
 					if (row["value"]) then
 						outputServerLog("Notice: Connection is working!")
