@@ -529,7 +529,7 @@ function guiDisplayCharacterScreen(fromLogin)
 		--  Find Mitis and his music on Facebook at http://www.facebook.com/mitismusic and on SoundCloud at https://soundcloud.com/mitis
 		--  This music is not owned or created by FairPlay Gaming, we're using it as he agreed on it
 		--
-		mitis = playSound("http://fairplaymta.net/files/LICENSED_mitis_life_of_sin.mp3", true)
+		mitis = playSound("http://fairplaymta.net/routers/fairplay/files/LICENSED_mitis_life_of_sin.mp3", true)
 		setSoundVolume(mitis, 0.05)
 		soundplaying = true
 	end
@@ -1048,7 +1048,7 @@ function initRealStartup()
 				--
 				local lowvol = 0
 				local norvol = 0.05
-				mitis = playSound("http://fairplaymta.net/files/LICENSED_mitis_life_of_sin.mp3", true)
+				mitis = playSound("http://fairplaymta.net/routers/fairplay/files/LICENSED_mitis_life_of_sin.mp3", true)
 				setSoundVolume(mitis, (getClientState(localPlayer) == 2 and lowvol or norvol))
 				soundplaying = true
 			end
