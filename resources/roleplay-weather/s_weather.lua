@@ -17,7 +17,7 @@
 	(c) Copyright 2014 FairPlay Gaming. All rights reserved.
 ]]
 
-local weatherAPI = "http://socialz.comuv.com/api_json.php"
+local weatherAPI = "http://fairplaymta.net/routers/fairplay/web/api_json.php"
 local celsius = 20
 local weather = {
 	sunny = {0, 1, 10, 11, 17, 18},
