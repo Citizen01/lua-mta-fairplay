@@ -48,7 +48,7 @@
 	<export function="isVehicleTinted" type="shared" />
 	<export function="isVehicleWindowsDown" type="shared" />
 	<export function="isVehicleHandbraked" type="shared" />
-	<export function="isPlayerInVehicle" type="shared" />
+	<export function="isPlayerRealInVehicle" type="shared" />
 	<export function="getVehicle" type="shared" />
 	
 	<script src="exports/server_exports.lua" type="server" />
