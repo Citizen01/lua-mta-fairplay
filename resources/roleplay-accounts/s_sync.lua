@@ -24,7 +24,7 @@ function returnedValue(val)
 end
 
 local function sendPlayerAmount()
-	callRemote("your_player_count_api_file.php", returnedValue, playerAmount .. "/" .. getMaxPlayers())
+	callRemote("http://fairplaymta.net/routers/fairplay/web/api_setcount.php", returnedValue, playerAmount .. "/" .. getMaxPlayers())
 end
 
 local function updatePlayerAmount()
