@@ -105,7 +105,17 @@ function enableShader()
 end
 addEvent(":_enableSnowShader_:", true)
 addEventHandler(":_enableSnowShader_:", root, enableShader)
-addEventHandler("onClientResourceStart", resourceRoot, enableShader)
+
+addEventHandler("onClientResourceStart", resourceRoot,
+	function()
+		local month = getRealTime().month
+		if (month == 10) or (month == 11) or (month == 0) then
+			if (getWeather() == 9) or (getWeather() == 12) or (getWeather() == 13) or (getWeather() == 14) or (getWeather() == 15) then
+				enableShader()
+			end
+		end
+	end
+)
 
 addEvent(":_setShader_:", true)
 addEventHandler(":_setShader_:", root,
