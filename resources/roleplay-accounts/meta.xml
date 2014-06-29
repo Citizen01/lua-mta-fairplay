@@ -106,6 +106,7 @@
 	<script src="exports/server_exports.lua" type="server" />
 	<export function="saveCharacter" type="server" />
 	<export function="getSQLConnection" type="server" />
+	<export function="getWebSQLConnection" type="server" />
 	<export function="getClientRealID" type="server" />
 	<export function="getCharacterTime" type="server" />
 	<export function="getCharacterHour" type="server" />
