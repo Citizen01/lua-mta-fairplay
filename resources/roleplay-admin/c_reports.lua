@@ -26,6 +26,18 @@ local function drawPhoto()
 	end
 end
 
+addEventHandler("onClientResourceStart", resourceRoot,
+	function()
+		bindKey("F2", "down", "report")
+	end
+)
+
+addEventHandler("onClientResourceStop", resourceRoot,
+	function()
+		unbindKey("F2", "down", "report")
+	end
+)
+
 addEvent(":_displayReportShot_:",true)
 addEventHandler(":_displayReportShot_:", root,
 	function(pixels)

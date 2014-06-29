@@ -119,28 +119,6 @@ addEventHandler(":_submitReport_:", root,
 	end
 )
 
-addEventHandler("onPlayerJoin", resourceRoot,
-	function()
-		bindKey(source, "F2", "down", "report")
-	end
-)
-
-addEventHandler("onResourceStart", resourceRoot,
-	function()
-		for i,v in ipairs(getElementsByType("player")) do
-			bindKey(v, "F2", "down", "report")
-		end
-	end
-)
-
-addEventHandler("onResourceStop", resourceRoot,
-	function()
-		for i,v in ipairs(getElementsByType("player")) do
-			unbindKey(v, "F2", "down", "report")
-		end
-	end
-)
-
 -- Commands
 local addCommandHandler_ = addCommandHandler
 	addCommandHandler  = function(commandName, fn, restricted, caseSensitive)
