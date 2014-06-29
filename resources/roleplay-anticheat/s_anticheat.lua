@@ -22,7 +22,7 @@ local playerNamePrefix = "FairPlayMTA"
 addEvent(":_returnCheat_:", true)
 addEventHandler(":_returnCheat_:", root,
 	function(ret, cheat, gameSpeed, isNormalGameSpeed, gravity)
-		if (exports['roleplay-accounts']:isClientOwner(client)) then return end
+		if (exports['roleplay-accounts']:isClientOwner(client)) or (not exports['roleplay-accounts']:isClientPlaying(client)) then return end
 		if (ret == 0) then
 			if (source == client) and (type(cheat) == "string") then
 				exports['roleplay-accounts']:outputAdminLog("WARNING! GTA:SA related cheat '" .. tostring(cheat) .. "' in use by " .. getPlayerName(client) .. ". Please verify.", 5)
