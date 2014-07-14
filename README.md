@@ -17,7 +17,7 @@ I do not offer direct support with the gamemode as this is not really a public p
 
 ### Description
 
-You have just arrived to Los Santos. The city of the rich and the city of the poor - Vinewood stars and gangbangers through out the city. Take a peek behind the Vinewood hills at the country side or live among the famous stars at Richman district. It's all your choice.
+You have just arrived to Los Santos. The city of the rich and the city of the poor - Vinewood stars and gangbangers through out the city. Take a peek behind the Vinewood hills at the country side or live among the famous stars at Richman district. It is all your choice.
 
 Join the peacekeepers, also known as the San Andreas State Police, or join the hardworking fire fighters at San Andreas Medical and Fire Rescue Department. You can join a gang and begin the journey to become the hoods' king. You can also work at businesses, such as the Los Santos News Office, or a local bakery. You can become anything you want in Los Santos, to make it simple.
 
@@ -27,11 +27,11 @@ Totally scripted from a scratch, given a look of our own to give it a finishing,
 
 ### Arrival
 
-When you create a character, you will go through a simple process of giving yourself a name, description, gender, race and outfit. After finished, you'll be arrive at Unity Station, just next to the city center, also known as Pershing Square, surrounded with the court house, police station, city hall and a few good hotels and apartment complexes to stay and have a nap at.
+When you create a character, you will go through a simple process of giving yourself a name, description, gender, race and outfit. After finished, you will arrive at Unity Station just next to the city center also known as Pershing Square, surrounded by the court house, police station, city hall and a few good hotels and apartment complexes to stay and have a nap at.
 
 ### Factions
 
-Giving you the ability to create your very own company without long waiting is just amazing. Pure and simple, very straight-forward. Fill up a form in-game and the employees of the City Hall will process it through for you. A wait of one day gives you access to all features of the company elements. Even though employees, a premade wage list, description and budget are needed, it will do everything for you so you can just have seat and a drink! You are able to hire people to work for you and they will be payed their wage for their work hours. Everything will be logged, so you will be able to find out if some employees aren't doing their job.
+Giving you the ability to create your very own company without long waiting is just amazing. Pure and simple, very straight-forward. Fill up a form in-game and the employees of the City Hall will process it through for you. A wait of one day gives you access to all features of the company elements. Even though employees, a premade wage list, description and budget are needed, it will do everything for you so you can just have seat and a drink! You are able to hire people to work for you and they will be payed their wage for their work hours. Everything will be logged, so you will be able to find out if some employees are not doing their job.
 
 ### Vehicles
 
