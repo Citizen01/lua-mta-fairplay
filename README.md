@@ -46,5 +46,12 @@ Ability to purchase your own properties and manage them has always been amazing 
 Spring, summer, fall, winter. All within the server and fully functional. Making streets and areas snowy when snowing, and making them hard to drive on, while during summer there is most of the time sunny and bright. These are taken into account in the script. Weather also changes dynamically and realistically.
 
 ### On a special note
+
 Shaders by `Ren712` (http://community.mtasa.com/) and MTA:SA Wiki examples (http://wiki.mtasa.com/).
 Very tiny snippets from the community and other resources, if those are left out, the main credit is mine, I guess (in addition, keep the copyrights up there, I made this open-source for a reason ok).
+
+### Contributors
+
+<a href="https://github.com/Gomitung">Miguel "Gomitung" Santos</a>
+<br />
+<a href="https://www.youtube.com/watch?v=cl3b7dDBLpo">Mount</a>
