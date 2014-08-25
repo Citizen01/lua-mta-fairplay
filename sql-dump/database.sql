@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `accounts` (
   `lastIP` varchar(255) NOT NULL DEFAULT '0.0.0.0',
   `lastSerial` varchar(255) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `atms` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `atms` (
   `limit` int(10) unsigned NOT NULL DEFAULT '5000',
   `created` varchar(255) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `characters` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -80,14 +80,14 @@ CREATE TABLE IF NOT EXISTS `characters` (
   `transmissionLicense` tinyint(1) NOT NULL DEFAULT '-1',
   `userID` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `config` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `key` varchar(255) NOT NULL,
   `value` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 INSERT INTO `config` (`id`, `key`, `value`) VALUES
 (1, 'motd', 'Welcome to FairPlay Gaming MTA: Roleplay! This is an open-source roleplay gamemode developed by Socialz (GitHub repository: Socialz/lua-mta-roleplay).'),
@@ -101,7 +101,7 @@ CREATE TABLE IF NOT EXISTS `contacts` (
   `number` int(10) unsigned NOT NULL,
   `ownerNumber` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `elevators` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -117,7 +117,7 @@ CREATE TABLE IF NOT EXISTS `elevators` (
   `dimension2` smallint(5) unsigned NOT NULL DEFAULT '0',
   `openType` tinyint(1) unsigned NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `factions` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -131,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `factions` (
   `inviteCount` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `bankValue` bigint(20) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `fuelstations` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -144,11 +144,11 @@ CREATE TABLE IF NOT EXISTS `fuelstations` (
   `modelID` smallint(3) unsigned NOT NULL DEFAULT '50',
   `name` varchar(255) NOT NULL DEFAULT 'John_Doe',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `gates` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-  `modelID` smallint(5) unsigned NOT NULL DEFAULT '1557',
+  `modelID` smallint(5) unsigned NOT NULL DEFAULT '1337',
   `posX` float NOT NULL DEFAULT '0',
   `posY` float NOT NULL DEFAULT '0',
   `posZ` float NOT NULL DEFAULT '0',
@@ -178,7 +178,7 @@ CREATE TABLE IF NOT EXISTS `gates` (
   `createdBy` int(10) unsigned NOT NULL,
   `createdOn` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `interiors` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -197,7 +197,7 @@ CREATE TABLE IF NOT EXISTS `interiors` (
   `created` varchar(255) NOT NULL DEFAULT '0',
   `userID` int(10) unsigned NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `inventory` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -208,7 +208,7 @@ CREATE TABLE IF NOT EXISTS `inventory` (
   `messagetoneID` tinyint(2) unsigned NOT NULL DEFAULT '1',
   `timestamp` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `languages` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -220,7 +220,7 @@ CREATE TABLE IF NOT EXISTS `languages` (
   `skill2` tinyint(3) unsigned NOT NULL DEFAULT '0',
   `skill3` tinyint(3) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `logs` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -230,7 +230,7 @@ CREATE TABLE IF NOT EXISTS `logs` (
   `logData` longtext CHARACTER SET latin1 NOT NULL,
   `logTime` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 CREATE TABLE IF NOT EXISTS `perks` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -240,7 +240,7 @@ CREATE TABLE IF NOT EXISTS `perks` (
   `expire` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `set` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `shops` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -254,7 +254,7 @@ CREATE TABLE IF NOT EXISTS `shops` (
   `skinID` smallint(3) unsigned NOT NULL DEFAULT '186',
   `created` varchar(255) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `vehicles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -287,7 +287,7 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
   `tinted` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `locked` tinyint(1) unsigned NOT NULL DEFAULT '0',
   `fuel` float unsigned NOT NULL DEFAULT '100',
-  `plateText` varchar(255) NOT NULL DEFAULT 'CBA6969',
+  `plateText` varchar(255) NOT NULL DEFAULT 'WTF1337',
   `jobID` int(10) unsigned NOT NULL,
   `doorState` varchar(255) NOT NULL DEFAULT '[ [ 0, 0, 0, 0, 0, 0 ] ]',
   `panelState` varchar(255) NOT NULL DEFAULT '[ [ 0, 0, 0, 0, 0, 0, 0 ] ]',
@@ -299,7 +299,7 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
   `lastused` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `created` varchar(255) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 CREATE TABLE IF NOT EXISTS `worlditems` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
@@ -319,4 +319,4 @@ CREATE TABLE IF NOT EXISTS `worlditems` (
   `userID` int(11) unsigned NOT NULL DEFAULT '0',
   `protection` int(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
