@@ -22,7 +22,7 @@ local function createFuelPoint(dbEntryID, posX, posY, posZ, rotZ, interior, dime
 	if (dbEntryID) then
 		_dbEntryID = dbEntryID
 	else
-		local query = dbExec(exports['roleplay-accounts']:getSQLConnection(), "INSERT INTO `??` (??, ??, ??, ??, ??, ??, ??, ??) VALUES ('??', '??', '??', '??', '??', '??', '??', '??')", "fuelstations", "posX", "posY", "posZ", "rotZ", "interior", "dimension", "modelID", "name", posX, posY, posZ, rotZ, interior, dimension, modelID, name)
+		local query = dbQuery(exports['roleplay-accounts']:getSQLConnection(), "INSERT INTO `??` (??, ??, ??, ??, ??, ??, ??, ??) VALUES ('??', '??', '??', '??', '??', '??', '??', '??')", "fuelstations", "posX", "posY", "posZ", "rotZ", "interior", "dimension", "modelID", "name", posX, posY, posZ, rotZ, interior, dimension, modelID, name)
 		if (not query) then return end
 		local _, _, last_insert_id = dbPoll(query, -1)
 		if (last_insert_id) then _dbEntryID = last_insert_id else return end
