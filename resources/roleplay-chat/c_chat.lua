@@ -44,9 +44,12 @@ function dxDisplayChatBubbles()
 						outputChatBox("okv")
 						local x, y, z = getPedBonePosition(player, 7)
 						local wsx, wsy = getScreenFromWorldPosition(x, y, z+0.3)
-						local textWidth, textHeight = dxGetTextWidth(v), dxGetFontHeight()
-						dxDrawRectangle((wsx-(textWidth/2))-5, (((wsy-textHeight)-5)+(10*i-1))+(textHeight*i), textWidth+10, textHeight+10, tocolor(0, 0, 0, 0.8*255), postGUI)
-						dxDrawText(v, wsx-(textWidth/2), ((wsy-textHeight)+(10*i-1))+(textHeight*i), sx, sy, tocolor(255, 255, 255, 255))
+						
+						if (wsx) and (wsy) then
+							local textWidth, textHeight = dxGetTextWidth(v), dxGetFontHeight()
+							dxDrawRectangle((wsx-(textWidth/2))-5, (((wsy-textHeight)-5)+(10*i-1))+(textHeight*i), textWidth+10, textHeight+10, tocolor(0, 0, 0, 0.8*255), postGUI)
+							dxDrawText(v, wsx-(textWidth/2), ((wsy-textHeight)+(10*i-1))+(textHeight*i), sx, sy, tocolor(255, 255, 255, 255))
+						end
 					end
 				end
 			end
