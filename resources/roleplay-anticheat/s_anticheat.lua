@@ -17,7 +17,7 @@
 	(c) Copyright 2014 FairPlay Gaming. All rights reserved.
 ]]
 
-local playerNamePrefix = "FairPlayMTA"
+local playerNamePrefix = "Roleplay"
 
 function getSafeNamePrefix()
 	return playerNamePrefix
