@@ -18,16 +18,19 @@
 ]]
 
 local playerAmount = 0
+local usePlayerCountAPI = false
 
 function returnedValue(val)
 	outputDebugString("API returned '" .. tostring(val) .. "' when sending " .. playerAmount .. " player(s) to web server.")
 end
 
 local function sendPlayerAmount()
+	if (not usePlayerCountAPI) then return end
 	callRemote("http://fairplaymta.net/routers/fairplay/web/api_setcount.php", returnedValue, playerAmount .. "/" .. getMaxPlayers())
 end
 
 local function updatePlayerAmount()
+	if (not usePlayerCountAPI) then return end
 	playerAmount = 0
 	for i,v in ipairs(getElementsByType("player")) do
 		playerAmount = playerAmount+1
@@ -37,6 +40,7 @@ end
 
 addEventHandler("onResourceStart", resourceRoot,
 	function()
+		if (not usePlayerCountAPI) then return end
 		updatePlayerAmount()
 		setTimer(updatePlayerAmount, 60000, 0)
 	end
@@ -44,6 +48,7 @@ addEventHandler("onResourceStart", resourceRoot,
 
 addEventHandler("onResourceStop", resourceRoot,
 	function()
+		if (not usePlayerCountAPI) then return end
 		playerAmount = "Offline"
 		sendPlayerAmount()
 	end
@@ -51,6 +56,7 @@ addEventHandler("onResourceStop", resourceRoot,
 
 addEventHandler("onPlayerJoin", root,
 	function()
+		if (not usePlayerCountAPI) then return end
 		playerAmount = playerAmount+1
 		sendPlayerAmount()
 	end
@@ -58,6 +64,7 @@ addEventHandler("onPlayerJoin", root,
 
 addEventHandler("onPlayerQuit", root,
 	function()
+		if (not usePlayerCountAPI) then return end
 		playerAmount = playerAmount-1
 		sendPlayerAmount()
 	end
