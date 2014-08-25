@@ -83,20 +83,6 @@ local function updateGear(state)
 	playSoundFrontEnd(4)
 end
 
-local function getElementSpeed(element, unit)
-	if (unit == nil) then unit = 0 end
-	if (isElement(element)) then
-		local x, y, z = getElementVelocity(element)
-		if (unit == "mph") or (unit == 1) or (unit == "1") then
-			return (x^2+y^2+z^2)^0.5*100
-		else
-			return (x^2+y^2+z^2)^0.5*1.8*100
-		end
-	else
-		return false
-	end
-end
-
 local function updateGearbox()
 	local vehicle = getPedOccupiedVehicle(localPlayer)
 	if (not vehicle) or (getVehicleController(vehicle) ~= localPlayer) then return end
@@ -142,7 +128,7 @@ local function updateGearbox()
 				toggleControl("accelerate", true)
 				toggleControl("brake_reverse", false)
 				
-				if (getElementSpeed(vehicle) > 6) then
+				if (exports['roleplay-vehicles']:getElementSpeed(vehicle) > 6) then
 					toggleControl("brake_reverse", true)
 				else
 					toggleControl("brake_reverse", false)
@@ -187,7 +173,7 @@ local function updateGearbox()
 				toggleControl("brake_reverse", true)
 			end
 			
-			if (getElementSpeed(vehicle) > 6) then
+			if (exports['roleplay-vehicles']:getElementSpeed(vehicle) > 6) then
 				toggleControl("accelerate", true)
 			else
 				toggleControl("accelerate", false)
