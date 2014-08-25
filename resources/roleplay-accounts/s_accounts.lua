@@ -730,7 +730,6 @@ addEventHandler("onPlayerChangeNick", root,
 	function(old, new)
 		if (string.find(new, exports['roleplay-anticheat']:getSafeNamePrefix() .. ".")) then return end
 		cancelEvent()
-		outputChatBox("Sorry, but we do not allow the change of nicknames on our server. Disconnect and change your nickname then instead.", source, 245, 20, 20, false)
 	end
 )
 
