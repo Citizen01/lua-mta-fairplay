@@ -1033,7 +1033,7 @@ addCommandHandler({"respawnvehs", "respawnallvehs", "respawnall", "respawnvehicl
 					end
 				end
 				
-				outputServerLog("Admin-Vehicle: " .. name .. " [" .. accounts .. "] respawned all vehicles.")
+				outputServerLog("Admin-Vehicle: " .. name .. " [" .. account .. "] respawned all vehicles.")
 			end, seconds*1000, 1, getPlayerName(player), exports['roleplay-accounts']:getAccountName(player))
 			
 			outputServerLog("Admin-Vehicle: " .. getPlayerName(player) .. " [" .. exports['roleplay-accounts']:getAccountName(player) .. "] executed the /" .. cmd .. " command - respawn pending at " .. seconds .. " seconds.")
