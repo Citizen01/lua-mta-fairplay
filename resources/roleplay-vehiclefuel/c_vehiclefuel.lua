@@ -118,7 +118,7 @@ addEventHandler("onClientClick", root,
 				if (getElementType(clickedElement) == "ped") then
 					if (getFuelPointID(clickedElement)) then
 						local x, y, z = getElementPosition(localPlayer)
-						if (getDistanceBetweenPoints3D(x, y, z, getElementPosition(clickedElement)) <= 2.5) then
+						if (getDistanceBetweenPoints3D(x, y, z, getElementPosition(clickedElement)) <= 3.5) then
 							if (isRefueling) then return end
 							local vehicle = getPedOccupiedVehicle(localPlayer)
 							if (not vehicle) or (getVehicleController(vehicle) ~= localPlayer) or (vehicle and not exports['roleplay-vehicles']:getVehicleRealID(vehicle) or exports['roleplay-vehicles']:getVehicleRealID(vehicle) <= 0) then return end
