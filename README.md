@@ -1,4 +1,11 @@
 ## FairPlay Gaming MTA
+
+### New roleplay gamemode in development
+
+I have begun working on a new roleplay gamemode, which is a rewritten version of this. Instead of working on it for 1.5 months straight non-stop, I have been working on it slowly and made sure that there are less issues overall!
+
+Visit this script here: https://github.com/Socialz/lua-mta-fairplay-roleplay
+
 ### Installation
 
 Simply place all the resources into your `resources` folder. After that you have to go into your `mtaserver.conf` and add the following line.
