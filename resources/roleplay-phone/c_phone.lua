@@ -194,7 +194,7 @@ function displayPhoneContacts()
 				local number = guiGridListGetItemText(phoneContacts.gridlist[1], row, 2)
 				guiGridListRemoveRow(phoneContacts.gridlist[1], row)
 				for i,v in ipairs(contacts) do
-					if (tonumber(contacts[i]["number"]) == tonumber(number)) then
+					if (contacts[i]["number"] == number) then
 						triggerServerEvent(":_updateContactList_:", localPlayer, contacts[i]["id"])
 						contacts[i] = nil
 						break
@@ -263,8 +263,8 @@ function displayPhoneCall(customNumber)
 		function()
 			local number = guiGetText(phoneCall.edit[1])
 			
-			if (number) and (tonumber(number)) and (string.find(number, "[0-9]")) then
-				if (tonumber(number) ~= tonumber(phoneNumber)) then
+			if (number) and (string.find(number, "[0-9]")) then
+				if (number ~= phoneNumber) then
 					if (string.len(number) >= 3) then
 						triggerServerEvent(":_usePhoneToCall_:", localPlayer, number, phoneNumber)
 					else
@@ -282,7 +282,7 @@ function displayPhoneCall(customNumber)
 	addEventHandler("onClientGUIClick", phoneCall.button[2],
 		function()
 			local number = guiGetText(phoneCall.edit[1])
-			if (number) and (tonumber(number)) and (string.find(number, "[0-9]")) and (guiGetText(phoneCall.button[2]) ~= "Exit") then
+			if (number) and (string.find(number, "[0-9]")) and (guiGetText(phoneCall.button[2]) ~= "Exit") then
 				triggerServerEvent(":_cutPhoneCall_:", localPlayer, number)
 				triggerEvent(":_setPhoneWindowText_:", localPlayer, 2)
 			elseif (guiGetText(phoneCall.button[2]) == "Exit") then
@@ -329,8 +329,8 @@ function displayPhoneSMS(customNumber, customText)
 			local number = guiGetText(phoneSMS.edit[1])
 			local message = guiGetText(phoneSMS.memo[1])
 			
-			if (number) and (tonumber(number)) and (string.find(number, "[0-9]")) then
-				if (tonumber(number) ~= tonumber(phoneNumber)) then
+			if (number) and (string.find(number, "[0-9]")) then
+				if (number ~= tonumber(phoneNumber)) then
 					if (string.len(number) >= 3) then
 						if (message) and (string.len(message) > 0) then
 							triggerServerEvent(":_usePhoneToText_:", localPlayer, number, message, phoneNumber)
@@ -352,7 +352,7 @@ function displayPhoneSMS(customNumber, customText)
 	addEventHandler("onClientGUIClick", phoneSMS.button[2],
 		function()
 			local number = guiGetText(phoneSMS.edit[1])
-			if (number) and (tonumber(number)) and (string.find(number, "[0-9]")) and (guiGetText(phoneSMS.button[2]) ~= "Exit Window") then
+			if (number) and (string.find(number, "[0-9]")) and (guiGetText(phoneSMS.button[2]) ~= "Exit Window") then
 				triggerServerEvent(":_cutPhoneSMS_:", localPlayer, number)
 				triggerEvent(":_setPhoneSMSWindowText_:", localPlayer, 2)
 			elseif (guiGetText(phoneSMS.button[2]) == "Exit Window") then
@@ -591,7 +591,7 @@ addEventHandler(":_setPhoneSMSWindowText_:", root,
 addEvent(":_exitPhoneWindows_:", true)
 addEventHandler(":_exitPhoneWindows_:", root,
 	function(number)
-		if (tonumber(phoneNumber) == tonumber(number)) or (number == true) then
+		if (phoneNumber == number) or (number == true) then
 			if (isElement(phoneMenu.window[1])) then
 				destroyElement(phoneMenu.window[1])
 			end
