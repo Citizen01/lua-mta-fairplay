@@ -98,8 +98,8 @@ INSERT INTO `config` (`id`, `key`, `value`) VALUES
 CREATE TABLE IF NOT EXISTS `contacts` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
-  `number` int(10) unsigned NOT NULL,
-  `ownerNumber` int(10) unsigned NOT NULL,
+  `number` varchar(10) unsigned NOT NULL,
+  `ownerNumber` varchar(10) unsigned NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
