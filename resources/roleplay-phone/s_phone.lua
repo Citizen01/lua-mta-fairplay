@@ -248,7 +248,6 @@ addEvent(":_usePhoneToCall_:", true)
 addEventHandler(":_usePhoneToCall_:", root,
 	function(number, callerNumber)
 		if (source ~= client) then return end
-		local number = tonumber(number)
 		local query = dbQuery(exports['roleplay-accounts']:getSQLConnection(), "SELECT * FROM `??` WHERE `??` = '??' AND `??` = '??' LIMIT 1", "inventory", "itemID", "10", "value", number)
 		if (query) then
 			local result, num_affected_rows = dbPoll(query, -1)
@@ -261,7 +260,7 @@ addEventHandler(":_usePhoneToCall_:", root,
 				for i,v in ipairs(getElementsByType("object")) do
 					if (getElementModel(v) == 330) and (getElementData(v, "roleplay:worlditems.itemID")) then
 						if (tonumber(getElementData(v, "roleplay:worlditems.itemID")) == 10) then
-							if (tonumber(getElementData(v, "roleplay:worlditems.value")) == number) then
+							if (getElementData(v, "roleplay:worlditems.value") == number) then
 								foundItem = true
 								for _,row in pairs(result) do
 									callingTimer[client] = setTimer(function(item, caller, ringtone)
@@ -279,7 +278,7 @@ addEventHandler(":_usePhoneToCall_:", root,
 				
 				if (not foundItem) then
 					for i,v in ipairs(getElementsByType("player")) do
-						if (exports['roleplay-items']:hasItem(v, 10, tostring(number))) then
+						if (exports['roleplay-items']:hasItem(v, 10, number)) then
 							if (not isPlayerOnPhone(v)) or (not isPlayerBeingCalled(v)) or (not isPlayerCalling(v)) then
 								foundItem = true
 								for _,row in pairs(result) do
@@ -316,7 +315,7 @@ addEventHandler(":_usePhoneToCall_:", root,
 				end, 28000, 1, client)
 			else
 				triggerClientEvent(client, ":_setPhoneWindowText_:", client, 1)
-				if (number == 911) then
+				if (number == "911") then
 					callingTimer[client] = setTimer(function(player)
 						outputChatBox("cool, 911 is responding jajajajajaja.", player, 20, 245, 20, false)
 						triggerClientEvent(player, ":_setPhoneWindowText_:", player, 2)
@@ -342,7 +341,6 @@ addEvent(":_usePhoneToText_:", true)
 addEventHandler(":_usePhoneToText_:", root,
 	function(number, message, callerNumber)
 		if (source ~= client) then return end
-		local number = tonumber(number)
 		local query = dbQuery(exports['roleplay-accounts']:getSQLConnection(), "SELECT * FROM `??` WHERE `??` = '??' AND `??` = '??' LIMIT 1", "inventory", "itemID", "10", "value", number)
 		if (query) then
 			local result, num_affected_rows = dbPoll(query, -1)
@@ -356,7 +354,7 @@ addEventHandler(":_usePhoneToText_:", root,
 					local query2 = dbQuery(exports['roleplay-accounts']:getSQLConnection(), "SELECT `name` FROM `??` WHERE `??` = '??' AND `??` = '??' LIMIT 1", "contacts", "number", callerNumber, "ownerNumber", number)
 					local result2, num_affected_rows2 = dbPoll(query2, -1)
 					for i,v in ipairs(getElementsByType("player")) do
-						if (exports['roleplay-items']:hasItem(v, 10, tostring(number))) then
+						if (exports['roleplay-items']:hasItem(v, 10, number)) then
 							foundItem = true
 							if (num_affected_rows2 > 0) then
 								for _,row1 in pairs(result) do
@@ -396,7 +394,7 @@ addEventHandler(":_usePhoneToText_:", root,
 					end, 3000, 1, client)
 				end
 			else
-				if (number == 911) then
+				if (number == "911") then
 					sendingTimer[client] = setTimer(function(player)
 						outputChatBox("cool, 911 is responding jajajajajaja.", player, 20, 245, 20, false)
 						triggerClientEvent(player, ":_setPhoneSMSWindowText_:", player, 2)
