@@ -583,10 +583,6 @@ addCommandHandler({"p", "ptalk", "talkphone", "phonetalk", "phone"},
 					local px, py, pz = getElementPosition(target)
 					local distance = getDistanceBetweenPoints3D(px, py, pz, getElementPosition(player))
 					
-					if (distance > 8) then
-						r, g, b = r-distance*2, g-distance*2, b-distance*2
-					end
-					
 					local has, slot = hasLanguage(target, getPlayerLanguage(player, 1))
 					if (not has) then
 						if (player ~= target) then
