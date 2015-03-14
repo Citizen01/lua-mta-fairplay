@@ -83,7 +83,7 @@ local function displayPhone(number)
 			if (query2) then
 				local result2, num_affected_rows2 = dbPoll(query2, -1)
 				for i,v in pairs(result) do
-					triggerClientEvent(source, ":_onDisplayPhoneMenu_:", source, tonumber(number), result2, v["ringtoneID"])
+					triggerClientEvent(source, ":_onDisplayPhoneMenu_:", source, number, result2, v["ringtoneID"])
 					break
 				end
 			end
@@ -120,11 +120,11 @@ addEvent(":_addContactList_:", true)
 addEventHandler(":_addContactList_:", root,
 	function(name, number, phoneNumber)
 		if (source ~= client) then return end
-		dbExec(exports['roleplay-accounts']:getSQLConnection(), "INSERT INTO `??` (name, number, ownerNumber) VALUES ('??', '??', '??')", "contacts", tostring(name), tonumber(number), tonumber(phoneNumber))
+		dbExec(exports['roleplay-accounts']:getSQLConnection(), "INSERT INTO `??` (name, number, ownerNumber) VALUES ('??', '??', '??')", "contacts", tostring(name), number, phoneNumber)
 		local query = dbQuery(exports['roleplay-accounts']:getSQLConnection(), "SELECT * FROM `??` WHERE `??` = '??'", "contacts", "ownerNumber", phoneNumber)
 		if (query) then
 			local result, num_affected_rows = dbPoll(query, -1)
-			triggerClientEvent(client, ":_updatePhoneContacts_:", client, tonumber(phoneNumber), result)
+			triggerClientEvent(client, ":_updatePhoneContacts_:", client, phoneNumber, result)
 		end
 	end
 )
@@ -138,7 +138,7 @@ addEventHandler(":_cutPhoneCall_:", root,
 		for i,v in ipairs(getElementsByType("object")) do
 			if (getElementModel(v) == 330) and (getElementData(v, "roleplay:worlditems.itemID")) then
 				if (tonumber(getElementData(v, "roleplay:worlditems.itemID")) == 10) then
-					if (tonumber(getElementData(v, "roleplay:worlditems.value")) == number) then
+					if (getElementData(v, "roleplay:worlditems.value") == number) then
 						foundItem = true
 						triggerClientEvent(root, ":_stopPlayingRingOnElement_:", root, item)
 						outputChatBox("The phone call has been ended.", client, 210, 160, 25, false)
