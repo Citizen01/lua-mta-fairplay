@@ -448,7 +448,7 @@ addCommandHandler({"createfaction", "makefaction", "addfaction"},
 							setElementData(faction, "roleplay:factions.wages", '[ [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 ] ]', true)
 							setElementData(faction, "roleplay:factions.cooldown", 0, true)
 							setElementData(faction, "roleplay:factions.invites", 0, true)
-							setElementData(faction, "roleplay:factions.balance", factionTypes[factionType][2], true)
+							setElementData(faction, "roleplay:factions.bank", factionTypes[factionType][2], true)
 							
 							outputLongChatBox("You created a faction with ID " .. last_insert_id .. " and name \"" .. name .. "\".", player, 20, 245, 20, false)
 							outputServerLog("Factions: " .. getPlayerName(player) .. " [" .. exports['roleplay-accounts']:getAccountName(player) .. "] created a new faction with ID " .. last_insert_id .. " and name \"" .. name .. "\".")
