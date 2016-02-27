@@ -6,6 +6,10 @@ I have begun working on a new roleplay gamemode, which is a rewritten version of
 
 Visit this script here: https://github.com/Socialz/lua-mta-fairplay-roleplay
 
+#### Notice
+
+If you find issues in this old roleplay gamemode, make sure to start a <a href="https://github.com/Socialz/lua-mta-fairplay/issues/new">new issue</a> for it. I might end up fixing it even though I offer less support for this nowadays.
+
 ### Installation
 
 Simply place all the resources into your `resources` folder. After that you have to go into your `mtaserver.conf` and add the following line.
