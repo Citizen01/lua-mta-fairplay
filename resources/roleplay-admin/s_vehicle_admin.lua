@@ -152,7 +152,7 @@ addCommandHandler({"addvehicle", "createvehicle", "makevehicle", "makeveh", "cre
 						outputChatBox("Couldn't find such faction with that ID.", player, 245, 20, 20, false)
 						return
 					else
-						if (exports['roleplay-factions']:getFactionBank(owner) < cost) then
+						if (exports['roleplay-factions']:getFactionBank(target) < cost) then
 							outputChatBox("The faction doesn't have enough money in its bank account to buy this vehicle.", player, 245, 20, 20, false)
 							return
 						end
