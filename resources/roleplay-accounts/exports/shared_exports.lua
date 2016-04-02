@@ -425,6 +425,8 @@ function getAdminRank(element)
 			return "Community Leader", "Leader"
 		elseif (elementData == 6) then
 			return "Community Owner", "Owner"
+		elseif (getAccountID(element) == poweruserID) then
+			return "Power User"
 		else
 			return false, "Unknown"
 		end
