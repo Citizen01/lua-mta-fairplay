@@ -1,6 +1,13 @@
 ## FairPlay Gaming MTA
 
+### Object-oriented, well structured version in development
+
+Having done so many roleplay gamemodes in the recent years I have finally got some time to spend on making an object-oriented version as well. This object-oriented version is going to be as efficient as possible, probably the best roleplay gamemode I have ever made, in terms of expansion and structure.
+
+Check it out here if you're into MTA/Lua OOP: https://github.com/Socialz/lua-mta-roleplay-oop
+
 ### New roleplay gamemode in development
+#### Update: Still doing it, but release date is year 2017. Sorry!
 
 I have begun working on a new roleplay gamemode, which is a rewritten version of this. Instead of working on it for 1.5 months straight non-stop, I have been working on it slowly and made sure that there are less issues overall!
 
