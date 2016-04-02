@@ -360,6 +360,12 @@ addEventHandler(":_factionInviteResult_:", root,
 	end
 )
 
+addEventHandler( "onPlayerJoin", root,
+	function( )
+		bindKey( source, "F1", "down", showFactionMenu )
+	end
+)
+
 addEventHandler("onResourceStart", resourceRoot,
 	function()
 		loadFactions()
