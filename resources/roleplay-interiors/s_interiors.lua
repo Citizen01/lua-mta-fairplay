@@ -615,8 +615,10 @@ addEventHandler("onColShapeLeave", root,
 )
 
 function threaderResume()
-	for _,threadedLoad in ipairs(threaders) do
-		coroutine.resume(threadedLoad)
+	for _,threadedLoad in pairs(threaders) do
+		if ( threadedLoad ) then
+			coroutine.resume(threadedLoad)
+		end
 	end
 end
 
@@ -632,14 +634,13 @@ addEventHandler("onResourceStart", resourceRoot,
 					outputDebugString(num_affected_rows .. " interiors are about to be loaded.")
 				end
 				
-				setTimer(function()
-					for result,row in pairs(result) do
-						local threadedLoad = coroutine.create(addInterior)
-						coroutine.resume(threadedLoad, row["id"], row["name"], row["posX"], row["posY"], row["posZ"], row["interior"], row["dimension"], row["lastused"], row["locked"], row["disabled"], row["interiorID"], row["interiorType"], row["interiorCost"], row["userID"])
-						table.insert(threaders, threadedLoad)
-						setTimer(threaderResume, 1000, 4)
-					end
-				end, 100, 1)
+				for result,row in pairs(result) do
+					local threadedLoad = coroutine.create(addInterior)
+					coroutine.resume(threadedLoad, row["id"], row["name"], row["posX"], row["posY"], row["posZ"], row["interior"], row["dimension"], row["lastused"], row["locked"], row["disabled"], row["interiorID"], row["interiorType"], row["interiorCost"], row["userID"])
+					table.insert(threaders, threadedLoad)
+				end
+				
+				setTimer(threaderResume, 1000, 4)
 			else
 				outputDebugString("0 interiors loaded. Does the interiors table contain data and are the settings correct?")
 			end
